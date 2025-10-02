@@ -10,6 +10,7 @@
   "author": "Altube, R.; Andreassi, F.; Cazzulino, M.; Marsilli, J.",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "nodemon": "^3.1.10"
   }
 }
