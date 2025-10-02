@@ -1,6 +1,6 @@
-import '../css/App.css';
-import ContactoTexto from '../components/ContactoTexto';
-import ContactoFormulario from '../components/ContactoFormulario';
+import './css/App.css';
+import ContactoTexto from './components/ContactoTexto';
+import ContactoFormulario from './components/ContactoFormulario';
 
 function App() {
   return (
