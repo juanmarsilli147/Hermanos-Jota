@@ -6,7 +6,7 @@
 
 ## Integrantes
 - Altube, Renata (renaaltub)
-- Andreassi, Facundo (facu-v01)
+- Andreassi, Facundo V. (facu-v01)
 - Cazzulino, Marcos (MarcosCazzulino)
 - Marsilli, Juan I. (juanmarsilli147)
 
