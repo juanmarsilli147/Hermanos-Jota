@@ -3,8 +3,14 @@ const contactoRoutes = require('./routes/contactoRoutes')
 const productoRoutes = require('./routes/productoRoutes')
 const logger = require('./logger')
 const cors = require('cors')
+const path = require("path");
+
+
 
 const app = express()
+
+// Servir la carpeta de imágenes
+app.use("/img", express.static(path.join(__dirname, "public/img")));
 
 const PORT = process.env.PORT || 4000
 
