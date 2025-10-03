@@ -8,7 +8,6 @@ routes.get('/', (req, res) => {
     res.json(mensajes)
 })
 
-
 // POST /api/contacto
 routes.post('/', (req, res) => {
     const nuevoMensaje = req.body
@@ -18,7 +17,7 @@ routes.post('/', (req, res) => {
     mensajes.push(nuevoMensaje)
     res.status(201).json(
         {
-            mensaje: "Nuevo mensaje creado",
+            mensaje: "Mensaje recibido",
             texto: nuevoMensaje
         }
     )
