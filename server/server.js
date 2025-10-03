@@ -2,6 +2,7 @@ const express = require('express');
 const contactoRoutes = require('./routes/contactoRoutes')
 const productoRoutes = require('./routes/productoRoutes')
 const cors = require('cors')
+const productos = require('./productos')
 
 const app = express()
 

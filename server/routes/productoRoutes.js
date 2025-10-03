@@ -1,7 +1,6 @@
 const express = require('express')
+const productos = require('./productos')
 const routes = express.Router()
-
-const productos = []
 
 // GET /api/productos
 routes.get('/', (req, res) => {
