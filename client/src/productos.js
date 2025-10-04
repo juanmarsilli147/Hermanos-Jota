@@ -154,5 +154,6 @@ const productos = [
     certificacion: "Ergonomía europea EN 1335",
     enlace: "detalleproductos.html?id=12"
   },
-
 ];
+
+export default productos

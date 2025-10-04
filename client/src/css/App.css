@@ -76,11 +76,13 @@ header{
 .abrir-menu, .cerrar-menu{
     border: none;
     background-color: transparent;
+    z-index: 20;
 }
 
 .fa-bars, .fa-xmark{
     font-size: 44px;
     color: var(--alabastro);
+    width: fit-content;
 }
 
 .nav-cart, .nav-mi-carrito-container{
@@ -109,7 +111,7 @@ header{
     flex-direction: column;
     align-items: end;
     gap: 1rem;
-    margin-top: 40px;
+    padding-top: 100px;
 }
 
 .li-botones{
@@ -131,6 +133,7 @@ header{
 .logo img{
     width: 50px;
     height: auto;
+    cursor: pointer;
 }
 
 .nav-mi-carrito, .nav-mi-perfil{
@@ -147,28 +150,15 @@ header{
     position: relative;
 }
 
-.in-page a, .nav-link a{
-    color: #f5e6d3ec;
+.nav-link{
+    color: var(--alabastro);
     font-family: var(--fuente-primaria);
     font-weight: 500;
     font-size: 24px;
     position: relative;
     text-decoration: none;
     border-bottom: 2px solid transparent;
-}
-
-.in-page a{
-    color: var(--alabastro);
-}
-
-.in-page a::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--alabastro);
+    cursor: pointer;
 }
 
 .icons-nav{
@@ -543,10 +533,10 @@ footer h4{
     font-size: 16px;
 }
 
-.footer-navegacion .in-page a{
+.footer-navegacion{
     font-size: 16px;
 }
-.footer-navegacion .in-page a::before{
+.footer-navegacion::before{
     display: none;
 }
 
@@ -1005,7 +995,7 @@ footer h4{
 #contacto-main {
     flex-direction: row;
 
-    background-image: url(../../assets/img/tablas-madera.jpg);
+    background-image: url(../assets/img/tablas-madera.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -1170,7 +1160,7 @@ footer h4{
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin: 0;
+        padding: 0;
         gap: 20px;
     }
 
@@ -1180,7 +1170,7 @@ footer h4{
         gap: 15px;
     }
 
-    .nav-link-icon a{
+    .nav-link-icon{
         color: #f5e6d3ec;
         font-family: var(--fuente-primaria);
         font-weight: 500;
@@ -1188,6 +1178,7 @@ footer h4{
         position: relative;
         text-decoration: none;
         border-bottom: 2px solid transparent;
+        cursor: pointer;
         transition: all 0.3s ease;
     }
 
@@ -1204,7 +1195,7 @@ footer h4{
         width: 100%;
         height: 28.125rem;
         background-image: linear-gradient(to left, transparent 60%, var(--alabastro)),
-        url('../../assets/img/sala.jpg');
+        url('../assets/img/sala.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1284,7 +1275,7 @@ footer h4{
         font-size: 22px;
     }
 
-    .footer-navegacion ul, .footer-navegacion .in-page a, .footer-contacto{
+    .footer-navegacion ul, .footer-contacto{
         font-size: 18px;
     }
 
@@ -1292,7 +1283,7 @@ footer h4{
         font-size: 18px;
     }
 
-    .footer-navegacion .in-page a::before{
+    .footer-navegacion::before{
         display: block;
     }
 
@@ -1495,9 +1486,10 @@ footer h4{
         font-weight: bold;
         font-size: 28px;
         color: var(--alabastro);
+        cursor: pointer;
     }
 
-    .nav-link a::before{
+    .nav-link::before{
         content: '';
         position: absolute;
         bottom: 0;
@@ -1510,22 +1502,22 @@ footer h4{
         transition: transform 0.3s ease;
     }
 
-    .nav-link a:hover::before{
+    .nav-link:hover::before{
         transform: scaleX(1);
     }
-    .nav-link a:hover{
+    .nav-link:hover{
         color: var(--alabastro);
         transition: all 0.3s ease;
     }
 
-    .nav-link-icon a:hover{
+    .nav-link-icon:hover{
         color: var(--alabastro);
     }
 
     /* Hero */
     .hero-image{
         height: 25rem;
-        background-image: url('../../assets/img/sala.jpg');
+        background-image: url('../assets/img/sala.jpg');
         box-shadow: 0 0 20px #a0512d8a;
     }
 
@@ -1630,7 +1622,7 @@ footer h4{
         gap: 20px;
     }
 
-    .footer-navegacion .in-page a, .footer-link a, .contacto{
+    .footer-link a, .contacto{
         font-size: 1rem;
         transition: all 0.2s ease;
     }
