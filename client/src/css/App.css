@@ -501,6 +501,7 @@ footer a{
 /* Derechos */
 
 .copy{
+    font-family: var(--fuente-primaria);
     width: 100%;
     text-align: center;
     align-self: end;
@@ -553,8 +554,14 @@ footer h4{
     font-family: var(--fuente-primaria);
 }
 
-.fa-regular, .fa-brands{
+.icono-contacto{
     margin-right: 5px;
+}
+.icono-contacto{
+    fill: currentColor;
+    color: var(--alabastro);
+    font-size: 16px;
+    filter: drop-shadow(0 0 0px rgb(255, 255, 255));
 }
 
 
@@ -1622,8 +1629,9 @@ footer h4{
         gap: 20px;
     }
 
-    .footer-link a, .contacto{
+    .footer-link, .contacto{
         font-size: 1rem;
+        cursor: pointer;
         transition: all 0.2s ease;
     }
 
@@ -1638,11 +1646,7 @@ footer h4{
         grid-row: 2;
     }
 
-    .footer-navegacion .in-page a:hover{
-        font-size: 1.125rem;
-    }
-
-    .footer-link a:hover{
+    .footer-link:hover{
         font-size: 1.125rem;
     }
 
