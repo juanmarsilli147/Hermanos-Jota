@@ -5,8 +5,6 @@ const logger = require('./logger')
 const cors = require('cors')
 const path = require("path");
 
-
-
 const app = express()
 
 // Servir la carpeta de imágenes
