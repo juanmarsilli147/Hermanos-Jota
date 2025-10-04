@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/App.css';
-import logo from '../assets/img/logoinvertido.svg';
 import BurgerMenu from './BurgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +9,7 @@ function Navbar(){
         <header>
             {/* Logo */}
             <section className='logo'>
-                <img src={logo} alt="Logo"/>
+                <img src='http://localhost:4000/img/logoinvertido.svg' alt="Logo"/>
                 <p className='nombre-marca'>Hermanos JOTA</p>
             </section>
 
