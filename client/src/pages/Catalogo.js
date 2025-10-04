@@ -48,7 +48,7 @@ export default function Catalogo() {
           <ProductList
             productos={productosFiltrados}
             onVerDetalle={setProductoSeleccionado}
-            onAgregarCarrito={agregarAlCarrito}
+            
           />
         ) : (
           <ProductDetail
