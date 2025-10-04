@@ -48,7 +48,6 @@ export default function Catalogo() {
           <ProductList
             productos={productosFiltrados}
             onVerDetalle={setProductoSeleccionado}
-            
           />
         ) : (
           <ProductDetail
