@@ -356,6 +356,9 @@ main{
     transition: all 0.3s ease;
 }
 
+.mensajeswr{
+    margin: auto;
+}
 
 
 /* Productos */

@@ -5,7 +5,7 @@ import BurgerMenu from './BurgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-function Header(){
+function Navbar(){
     return (
         <header>
             {/* Logo */}
@@ -49,4 +49,4 @@ function Header(){
     )
 }
 
-export default Header
+export default Navbar
