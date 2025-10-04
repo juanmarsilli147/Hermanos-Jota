@@ -27,11 +27,6 @@ export default function Catalogo() {
     fetchProductos();
   }, []);
 
-  const agregarAlCarrito = (producto) => {
-    console.log("Agregado al carrito:", producto);
-    // acá podrías usar contexto o sessionStorage
-  };
-
 
   const productosFiltrados = productos.filter((p) =>
     p.nombre.toLowerCase().includes(busqueda.toLowerCase())
