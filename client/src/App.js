@@ -1,22 +1,11 @@
 import './css/App.css';
-import ContactoTexto from './components/ContactoTexto';
-import ContactoFormulario from './components/ContactoFormulario';
+import Contacto from './pages/Contacto';
 
 function App() {
   return (
     <div className="App">
 
-      <main id='contacto-main'>
-        <article id='contacto-card'>
-          <section id='contacto-texto'>
-            <ContactoTexto />
-          </section>
-
-          <section id='contacto-formulario'>
-            <ContactoFormulario />
-          </section>
-        </article>
-      </main>
+      <Contacto />
 
     </div>
   );
