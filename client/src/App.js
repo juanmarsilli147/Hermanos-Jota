@@ -1,11 +1,17 @@
 import './css/App.css';
-import Catalogo from './pages/Catalogo';
+import Contacto from './pages/Contacto';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
-      <Catalogo />
-    </>
+    <div className="App">
+      
+      <Navbar />
+      <Contacto />
+      <Footer />
+
+    </div>
   );
 }
 
