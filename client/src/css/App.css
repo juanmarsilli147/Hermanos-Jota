@@ -586,8 +586,6 @@ footer h4{
 
 .icono-contacto{
     margin-right: 5px;
-}
-.icono-contacto{
     fill: currentColor;
     color: var(--alabastro);
     font-size: 16px;
