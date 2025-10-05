@@ -22,6 +22,9 @@
 /* Generales */
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--alabastro);
     padding-top: 100px;
 }
@@ -76,11 +79,13 @@ header{
 .abrir-menu, .cerrar-menu{
     border: none;
     background-color: transparent;
+    z-index: 20;
 }
 
 .fa-bars, .fa-xmark{
     font-size: 44px;
     color: var(--alabastro);
+    width: fit-content;
 }
 
 .nav-cart, .nav-mi-carrito-container{
@@ -100,6 +105,9 @@ header{
     padding: 5px;
     border-radius: 50%;
     color: var(--verde-salvia);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -109,6 +117,7 @@ header{
     flex-direction: column;
     align-items: end;
     gap: 1rem;
+    padding-top: 100px;
     margin-top: 40px;
 }
 
@@ -131,6 +140,7 @@ header{
 .logo img{
     width: 50px;
     height: auto;
+    cursor: pointer;
 }
 
 .nav-mi-carrito, .nav-mi-perfil{
@@ -147,7 +157,7 @@ header{
     position: relative;
 }
 
-.in-page a, .nav-link a{
+.nav-link{
     color: #f5e6d3ec;
     font-family: var(--fuente-primaria);
     font-weight: 500;
@@ -155,13 +165,15 @@ header{
     position: relative;
     text-decoration: none;
     border-bottom: 2px solid transparent;
+    cursor: pointer;
 }
 
-.in-page a{
+.in-page{
     color: var(--alabastro);
+    position: relative;
 }
 
-.in-page a::before{
+.in-page::after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -170,6 +182,7 @@ header{
     height: 2px;
     background-color: var(--alabastro);
 }
+
 
 .icons-nav{
     display: none;
@@ -366,6 +379,9 @@ main{
     transition: all 0.3s ease;
 }
 
+.mensajeswr{
+    margin: auto;
+}
 
 
 /* Productos */
@@ -495,6 +511,7 @@ footer a{
     align-items: center;
     gap: 15px;
     width: 50%;
+    cursor: pointer;
 }
 
 .footer-logo div{
@@ -511,6 +528,7 @@ footer a{
 /* Derechos */
 
 .copy{
+    font-family: var(--fuente-primaria);
     width: 100%;
     text-align: center;
     align-self: end;
@@ -543,10 +561,15 @@ footer h4{
     font-size: 16px;
 }
 
-.footer-navegacion .in-page a{
+.footer-link{
+    position: relative;
+}
+
+.footer-navegacion ul .in-page{
     font-size: 16px;
 }
-.footer-navegacion .in-page a::before{
+
+.footer-navegacion .in-page::after{
     display: none;
 }
 
@@ -563,8 +586,12 @@ footer h4{
     font-family: var(--fuente-primaria);
 }
 
-.fa-regular, .fa-brands{
+.icono-contacto{
     margin-right: 5px;
+    fill: currentColor;
+    color: var(--alabastro);
+    font-size: 16px;
+    filter: drop-shadow(0 0 0px rgb(255, 255, 255));
 }
 
 
@@ -1005,7 +1032,7 @@ footer h4{
 #contacto-main {
     flex-direction: row;
 
-    background-image: url(../../assets/img/tablas-madera.jpg);
+    background-image: url(http://localhost:4000/img/tablas-madera.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -1170,7 +1197,7 @@ footer h4{
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin: 0;
+        padding: 0;
         gap: 20px;
     }
 
@@ -1180,7 +1207,7 @@ footer h4{
         gap: 15px;
     }
 
-    .nav-link-icon a{
+    .nav-link-icon{
         color: #f5e6d3ec;
         font-family: var(--fuente-primaria);
         font-weight: 500;
@@ -1188,6 +1215,7 @@ footer h4{
         position: relative;
         text-decoration: none;
         border-bottom: 2px solid transparent;
+        cursor: pointer;
         transition: all 0.3s ease;
     }
 
@@ -1204,7 +1232,7 @@ footer h4{
         width: 100%;
         height: 28.125rem;
         background-image: linear-gradient(to left, transparent 60%, var(--alabastro)),
-        url('../../assets/img/sala.jpg');
+        url('http://localhost:4000/img/sala.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1284,7 +1312,7 @@ footer h4{
         font-size: 22px;
     }
 
-    .footer-navegacion ul, .footer-navegacion .in-page a, .footer-contacto{
+    .footer-navegacion ul, .footer-contacto{
         font-size: 18px;
     }
 
@@ -1292,7 +1320,7 @@ footer h4{
         font-size: 18px;
     }
 
-    .footer-navegacion .in-page a::before{
+    .footer-navegacion ul .in-page::after{
         display: block;
     }
 
@@ -1495,9 +1523,10 @@ footer h4{
         font-weight: bold;
         font-size: 28px;
         color: var(--alabastro);
+        cursor: pointer;
     }
 
-    .nav-link a::before{
+    .nav-link::before{
         content: '';
         position: absolute;
         bottom: 0;
@@ -1510,22 +1539,22 @@ footer h4{
         transition: transform 0.3s ease;
     }
 
-    .nav-link a:hover::before{
+    .nav-link:hover::before{
         transform: scaleX(1);
     }
-    .nav-link a:hover{
+    .nav-link:hover{
         color: var(--alabastro);
         transition: all 0.3s ease;
     }
 
-    .nav-link-icon a:hover{
+    .nav-link-icon:hover{
         color: var(--alabastro);
     }
 
     /* Hero */
     .hero-image{
         height: 25rem;
-        background-image: url('../../assets/img/sala.jpg');
+        background-image: url('http://localhost:4000/img/sala.jpg');
         box-shadow: 0 0 20px #a0512d8a;
     }
 
@@ -1630,8 +1659,9 @@ footer h4{
         gap: 20px;
     }
 
-    .footer-navegacion .in-page a, .footer-link a, .contacto{
+    .footer-navegacion ul .in-page, .footer-link, .contacto{
         font-size: 1rem;
+        cursor: pointer;
         transition: all 0.2s ease;
     }
 
@@ -1646,11 +1676,11 @@ footer h4{
         grid-row: 2;
     }
 
-    .footer-navegacion .in-page a:hover{
+    .footer-navegacion ul .in-page:hover{
         font-size: 1.125rem;
     }
 
-    .footer-link a:hover{
+    .footer-link:hover{
         font-size: 1.125rem;
     }
 
