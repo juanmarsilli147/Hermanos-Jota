@@ -23,7 +23,7 @@ function PaginaInicio({setRoute, anadirFuncion}){
                 </>
             ) : (
                 <section className='catalogo'>
-                    <ProductDetail producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)}/>
+                    <ProductDetail producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)} anadirFuncion={anadirFuncion}/>
                 </section>
             )}
         </main>
