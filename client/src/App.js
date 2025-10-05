@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import { useState } from 'react';
 import PaginaInicio from './pages/PaginaInicio';
 import Contacto from './pages/Contacto';
+import Catalogo from './pages/Catalogo';
 
 function App() {
   const [route, setRoute] = useState('index');
@@ -19,6 +20,7 @@ function App() {
       
       <main>
         {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
+        {route === 'productos' && <Catalogo setRoute={setRoute}/>}
         {route === 'contacto' && <Contacto setRoute={setRoute}/>}
       </main>
 
