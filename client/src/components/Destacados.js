@@ -1,8 +1,6 @@
-import React, {useState} from "react";
 import useSWR from 'swr';
 import FeaturedProduct from "./FeaturedProduct";
 import '../css/App.css';
-import ProductDetail from './ProductDetail';
 
 const productosDestacados = (url) => {
     return fetch(url).then(async (res) => {
@@ -13,8 +11,7 @@ const productosDestacados = (url) => {
     })
 }
 
-function Destacados({setRoute, anadirFuncion}) {
-    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+function Destacados({setRoute, anadirFuncion, onVerDetalle}) {
 
     const {
         data: featuredProducts,
@@ -27,28 +24,24 @@ function Destacados({setRoute, anadirFuncion}) {
 
     return(
         <>
-            {!productoSeleccionado ? (
-                <section className="destacados">
-                    <section className="destacados-head">
-                        <div className="destacados-title">
-                            <h2>DESTACADOS</h2>
-                            <p className="sub">Novedades y favoritos de la casa</p>
-                        </div>
-                        <div className="ver-coleccion">
-                            <button className="btn-ver-coleccion" onClick={() => setRoute('productos')}>Ver Colección</button>
-                        </div>
-                    </section>
-                    <section className="destacados-productos">
-                        {featuredProducts.map(product => (
-                            <section key={product.id} className="destacados-producto">
-                                <FeaturedProduct imagen={product.imagen} alt={product.alt} nombre={product.nombre} descripcion={product.descripcionDestacado} anadirFuncion={anadirFuncion} onVerDetalle={() => setProductoSeleccionado(product)}/>
-                            </section>
-                        ))}
-                    </section>
+            <section className="destacados">
+                <section className="destacados-head">
+                    <div className="destacados-title">
+                        <h2>DESTACADOS</h2>
+                        <p className="sub">Novedades y favoritos de la casa</p>
+                    </div>
+                    <div className="ver-coleccion">
+                        <button className="btn-ver-coleccion" onClick={() => setRoute('productos')}>Ver Colección</button>
+                    </div>
                 </section>
-            ) : (
-                <ProductDetail producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)}/>
-            )}
+                <section className="destacados-productos">
+                    {featuredProducts.map(product => (
+                        <section key={product.id} className="destacados-producto">
+                            <FeaturedProduct imagen={product.imagen} alt={product.alt} nombre={product.nombre} descripcion={product.descripcionDestacado} anadirFuncion={anadirFuncion} onVerDetalle={() => onVerDetalle(product)}/>
+                            </section>
+                    ))}
+                </section>
+            </section>
         </>
     )
 }
