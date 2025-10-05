@@ -47,7 +47,7 @@ function Destacados({setRoute, anadirFuncion}) {
                     </section>
                 </section>
             ) : (
-                <ProductDetail producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)}/>
+                <ProductDetail producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)} anadirFuncion={anadirFuncion}/>
             )}
         </>
     )
