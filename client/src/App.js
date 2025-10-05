@@ -1,17 +1,31 @@
 import './css/App.css';
-import Contacto from './pages/Contacto';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { useState } from 'react';
+import PaginaInicio from './pages/PaginaInicio';
+import Contacto from './pages/Contacto';
+import Catalogo from './pages/Catalogo';
 
 function App() {
-  return (
-    <div className="App">
-      
-      <Navbar />
-      <Contacto />
-      <Footer />
+  const [route, setRoute] = useState('index');
+  const [carrito, setCarrito] = useState([]);
 
-    </div>
+  const anadirAlCarrito = (producto) => {
+    setCarrito([...carrito, producto])
+  }
+
+  return (
+    <>
+      <Navbar route={route} setRoute={setRoute} contador={carrito.length}/>
+      
+      <main>
+        {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
+        {route === 'productos' && <Catalogo setRoute={setRoute}/>}
+        {route === 'contacto' && <Contacto setRoute={setRoute}/>}
+      </main>
+
+      <Footer setRoute={setRoute}/>
+    </>
   );
 }
 

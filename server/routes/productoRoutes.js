@@ -4,7 +4,9 @@ const routes = express.Router()
 
 // GET /api/productos
 routes.get('/', (req, res) => {
-    res.json(productos)
+    const {limit} = req.query;
+    const productosMostrados = limit ? productos.slice(0, parseInt(limit)) : productos;
+    res.json(productosMostrados)
 })
 
 routes.get("/:id", (req, res, next) => {
@@ -15,7 +17,7 @@ routes.get("/:id", (req, res, next) => {
         const error = new Error(`Producto no encontrado`);
         error.status = 404;
         return next(error); 
-  }
+    }
 
     res.json(producto)
 })
