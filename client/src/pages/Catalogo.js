@@ -56,7 +56,11 @@ export default function Catalogo({ setRoute, anadirFuncion }) {
         ) : (
           <ProductDetail
             producto={productoSeleccionado}
+            productos={productos}
             onVolver={() => setProductoSeleccionado(null)}
+            anadirFuncion={anadirFuncion}
+            onVerDetalle={setProductoSeleccionado}
+            setRoute={setRoute}
           />
         )}
       </section>
