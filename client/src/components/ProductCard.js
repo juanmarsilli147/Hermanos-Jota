@@ -1,8 +1,9 @@
 import "../css/App.css";
+import ButtonAgregarCarrito from "./ButtonAgregarCarrito";
 
-export default function ProductCard({ producto, onVerDetalle }) {
+export default function ProductCard({ producto, onVerDetalle, anadirFuncion }) {
   return (
-    <div className="card" onClick={() => onVerDetalle(producto)}>
+    <div className="card">
       <div className="card-img">
         <img src={producto.imagen} alt={producto.nombre} />
       </div>
@@ -13,6 +14,7 @@ export default function ProductCard({ producto, onVerDetalle }) {
           <a href="#" onClick={(e) => { e.preventDefault(); onVerDetalle(producto); }}>
             Ver detalle
           </a>
+          <ButtonAgregarCarrito producto={producto} anadirFuncion={anadirFuncion} />
         </div>
       </div>
     </div>

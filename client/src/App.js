@@ -20,7 +20,7 @@ function App() {
       
       <main>
         {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
-        {route === 'productos' && <Catalogo setRoute={setRoute}/>}
+        {route === 'productos' && <Catalogo setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
         {route === 'contacto' && <Contacto setRoute={setRoute}/>}
       </main>
 

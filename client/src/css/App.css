@@ -728,7 +728,7 @@ footer h4{
 }
 
 .card:hover .card-img img {
-    transform: scale(1.5); 
+    transform: scale(1.3); 
 }
 
 .card-info {
@@ -745,6 +745,7 @@ footer h4{
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     align-self: center;
+    text-align: center;
 }
 
 .card-info p {
@@ -754,8 +755,9 @@ footer h4{
 }
 
 .card-info a {
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.6rem;
     background: var(--alabastro);
     color: var(--siena-tostado);
@@ -764,6 +766,7 @@ footer h4{
     text-decoration: none;
     transition: background 0.3s ease, color 0.3s ease;
 }
+
 
 .card-info a:hover {
     background: var(--rosa-polvo, #d67b7b);
@@ -1742,11 +1745,9 @@ footer h4{
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
+    width: 80vw;
   }
-  .catalogo {
-    max-width: 1200px;
-  }
+
 }
 
 @media (min-width: 1440px) {

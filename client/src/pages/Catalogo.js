@@ -4,7 +4,7 @@ import ProductDetail from "../components/ProductDetail";
 import SearchBar from "../components/SearchBar";
 import "../css/App.css";
 
-export default function Catalogo() {
+export default function Catalogo({ setRoute, anadirFuncion }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -48,6 +48,7 @@ export default function Catalogo() {
           <ProductList
             productos={productosFiltrados}
             onVerDetalle={setProductoSeleccionado}
+            anadirFuncion={anadirFuncion}
           />
         ) : (
           <ProductDetail
