@@ -1,8 +1,7 @@
-import React from "react";
 import '../css/App.css';
 import ButtonAgregarCarrito from "./ButtonAgregarCarrito";
 
-function FeaturedProduct({imagen, alt, nombre, descripcion, anadirFuncion}){
+function FeaturedProduct({imagen, alt, nombre, descripcion, anadirFuncion, onVerDetalle}){
     return (
         <>
             <div className="destacados-img">
@@ -13,8 +12,8 @@ function FeaturedProduct({imagen, alt, nombre, descripcion, anadirFuncion}){
                 <div className="destacados-separacion"></div>
                 <p>{descripcion}</p>
                 <div className="destacados-botones-card">
-                    <button className="ver-detalle-indexCards">Ver detalle</button>
-                    <ButtonAgregarCarrito producto={{imagen, alt, nombre, descripcion}} anadirFuncion={anadirFuncion}/>
+                    <button className="ver-detalle-indexCards" onClick={() => onVerDetalle()}>Ver detalle</button>
+                    <ButtonAgregarCarrito producto={{imagen, alt, nombre, descripcion}} anadirFuncion={anadirFuncion} onVerDetalle={onVerDetalle}/>
                 </div>
             </section>
         </>

@@ -18,11 +18,9 @@ function App() {
     <>
       <Navbar route={route} setRoute={setRoute} contador={carrito.length}/>
       
-      <main>
-        {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
-        {route === 'productos' && <Catalogo setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
-        {route === 'contacto' && <Contacto setRoute={setRoute}/>}
-      </main>
+      {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
+      {route === 'productos' && <Catalogo setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
+      {route === 'contacto' && <Contacto setRoute={setRoute}/>}
 
       <Footer setRoute={setRoute}/>
     </>
