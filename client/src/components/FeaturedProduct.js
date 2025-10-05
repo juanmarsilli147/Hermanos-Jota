@@ -1,9 +1,8 @@
 import React from "react";
 import '../css/App.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import ButtonAgregarCarrito from "./ButtonAgregarCarrito";
 
-function FeaturedProduct({imagen, alt, nombre, descripcion}){
+function FeaturedProduct({imagen, alt, nombre, descripcion, anadirFuncion}){
     return (
         <>
             <div className="destacados-img">
@@ -15,7 +14,7 @@ function FeaturedProduct({imagen, alt, nombre, descripcion}){
                 <p>{descripcion}</p>
                 <div className="destacados-botones-card">
                     <button className="ver-detalle-indexCards">Ver detalle</button>
-                    <button className="btn-cart" id="agregarCarrito"><FontAwesomeIcon icon={faCartShopping}/></button>
+                    <ButtonAgregarCarrito producto={{imagen, alt, nombre, descripcion}} anadirFuncion={anadirFuncion}/>
                 </div>
             </section>
         </>

@@ -2,8 +2,13 @@ import '../css/App.css';
 import BurgerMenu from './BurgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
-function Navbar({route, setRoute}){
+function Navbar({route, setRoute, contador}){
+    // Menú hamburguesa visibilidad
+    const [menuVisible, setVisibilidad] = useState(false);
+
+    // Clases para la nav
     const getClass = (target) => route === target ? 'nav-link in-page' : 'nav-link'
 
     return (
@@ -15,20 +20,32 @@ function Navbar({route, setRoute}){
             </section>
 
             {/* Menú hamburguesa */}
-            <BurgerMenu />
+            <BurgerMenu visibilidad={menuVisible} cambiarVisibilidad={setVisibilidad}/>
 
             {/* nav */}
-            <nav className='nav' id='nav'>
+            <nav className={menuVisible ? 'nav visible' : 'nav'}>
                 <ul className='links-nav'>
-                    <li className={getClass('index')} onClick={() => setRoute('index')}>Inicio</li>
-                    <li className={getClass('productos')} onClick={() => setRoute('productos')}>Productos</li>
-                    <li className={getClass('contacto')} onClick={() => setRoute('contacto')}>Contacto</li>
+                    {/* Ir al index */}
+                    <li className={getClass('index')} onClick={() => {
+                        setRoute('index');
+                        setVisibilidad(false)}}>Inicio</li>
+
+                    {/* Ir a productos */}
+                    <li className={getClass('productos')} onClick={() => {
+                        setRoute('productos');
+                        setVisibilidad(false)}}>Productos</li>
+
+                    {/* Ir a contacto */}
+                    <li className={getClass('contacto')} onClick={() => {
+                        setRoute('contacto');
+                        setVisibilidad(false)}}>Contacto</li>
+
                     <li className='li-botones'>
                         <button className='nav-mi-perfil'>Mi perfil</button>
                         <div className='nav-mi-carrito-container'>
                             <button className='nav-mi-carrito'>Mi carrito</button>
-                            <div>
-                                <p></p>
+                            <div className={contador > 0 ? 'numero-carrito' : ''}>
+                                <p>{contador > 0 ? contador : null}</p>
                             </div>
                         </div>
                     </li>
@@ -39,8 +56,8 @@ function Navbar({route, setRoute}){
                     <li className='nav-link-icon'><FontAwesomeIcon icon={faUser}/></li>
                     <li className='nav-link-icon nav-cart'>
                         <FontAwesomeIcon icon={faCartShopping}/>
-                        <div>
-                            <p></p>
+                        <div className={contador > 0 ? 'numero-carrito' : ''}>
+                            <p>{contador > 0 ? contador : null}</p>
                         </div>
                     </li>
                 </section>

@@ -2,6 +2,7 @@ const express = require('express');
 const contactoRoutes = require('./routes/contactoRoutes')
 const productoRoutes = require('./routes/productoRoutes')
 const logger = require('./logger')
+const cors = require('cors')
 const path = require('path');
 
 const app = express()
@@ -10,7 +11,9 @@ app.use("/img", express.static(path.join(__dirname, "public/img")));
 
 const PORT = process.env.PORT || 4000
 
-//Verifica que la única dirección desde la cual se conecte sea el front corriendo en el puerto 3000
+app.use(cors({
+    origin: 'http://localhost:3000'
+}))
 
 app.use(express.json())
 app.use(logger)

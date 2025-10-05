@@ -105,7 +105,9 @@ header{
     padding: 5px;
     border-radius: 50%;
     color: var(--verde-salvia);
+    font-family: 'Poppins', Arial, sans-serif;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .links-nav{

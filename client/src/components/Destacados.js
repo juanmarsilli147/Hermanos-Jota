@@ -12,12 +12,12 @@ const productosDestacados = (url) => {
     })
 }
 
-function Destacados({setRoute}) {
+function Destacados({setRoute, anadirFuncion}) {
     const {
         data: featuredProducts,
         error,
         isLoading
-    } = useSWR('/api/productos?limit=3', productosDestacados);
+    } = useSWR('http://localhost:4000/api/productos?limit=3', productosDestacados);
 
     if (error) return <p className="mensajeswr">Hubo un problema al cargar los productos. Intenta de nuevo más tarde</p>;
     if (isLoading) return <p className="mensajeswr">Cargando...</p>;
@@ -36,7 +36,7 @@ function Destacados({setRoute}) {
             <section className="destacados-productos">
                 {featuredProducts.map(product => (
                     <section key={product.id} className="destacados-producto">
-                        <FeaturedProduct imagen={product.imagen} alt={product.alt} nombre={product.nombre} descripcion={product.descripcionDestacado}/>
+                        <FeaturedProduct imagen={product.imagen} alt={product.alt} nombre={product.nombre} descripcion={product.descripcionDestacado} anadirFuncion={anadirFuncion}/>
                     </section>
                 ))}
             </section>

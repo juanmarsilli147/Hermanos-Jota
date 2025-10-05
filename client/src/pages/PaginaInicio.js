@@ -2,16 +2,16 @@ import Hero from '../components/Hero';
 import SeparacionSecciones from '../components/SeparacionSecciones';
 import Destacados from '../components/Destacados';
 
-function Index({setRoute}){
+function PaginaInicio({setRoute, anadirFuncion}){
     return(
         <>
             <Hero setRoute={setRoute}/>
 
             <SeparacionSecciones/>
             
-            <Destacados setRoute={setRoute}/>
+            <Destacados setRoute={setRoute} anadirFuncion={anadirFuncion}/>
         </>
     )
 }
 
-export default Index
+export default PaginaInicio

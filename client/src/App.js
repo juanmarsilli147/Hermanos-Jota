@@ -2,16 +2,22 @@ import './css/App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { useState } from 'react';
-import Index from './pages/Index';
+import PaginaInicio from './pages/PaginaInicio';
 
 function App() {
   const [route, setRoute] = useState('index');
+  const [carrito, setCarrito] = useState([]);
+
+  const anadirAlCarrito = (producto) => {
+    setCarrito([...carrito, producto])
+  }
+
   return (
     <>
-      <Navbar route={route} setRoute={setRoute}/>
+      <Navbar route={route} setRoute={setRoute} contador={carrito.length}/>
       
       <main>
-        {route === 'index' && <Index setRoute={setRoute}/>}
+        {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
       </main>
 
       <Footer setRoute={setRoute}/>
