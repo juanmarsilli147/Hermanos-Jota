@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/App.css';
 import MediosContacto from './MediosContacto';
 
-function Footer(){
+function Footer({setRoute}){
     return(
         <footer>
             {/* Logo footer */}
@@ -21,9 +21,9 @@ function Footer(){
                 <section className='footer-navegacion'>
                     <h4>Navega</h4>
                     <ul>
-                        <li className='footer-link'>Inicio</li>
-                        <li className='footer-link'>Productos</li>
-                        <li className='footer-link'>Contacto</li>
+                        <li className='footer-link' onClick={() => setRoute('index')}>Inicio</li>
+                        <li className='footer-link' onClick={() => setRoute('productos')}>Productos</li>
+                        <li className='footer-link' onClick={() => setRoute('contacto')}>Contacto</li>
                     </ul>
                 </section>
 

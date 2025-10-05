@@ -1,10 +1,11 @@
-import React from 'react';
 import '../css/App.css';
 import BurgerMenu from './BurgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-function Navbar(){
+function Navbar({route, setRoute}){
+    const getClass = (target) => route === target ? 'nav-link in-page' : 'nav-link'
+
     return (
         <header>
             {/* Logo */}
@@ -19,9 +20,9 @@ function Navbar(){
             {/* nav */}
             <nav className='nav' id='nav'>
                 <ul className='links-nav'>
-                    <li className='nav-link'>Inicio</li>
-                    <li className='nav-link'>Productos</li>
-                    <li className='nav-link'>Contacto</li>
+                    <li className={getClass('index')} onClick={() => setRoute('index')}>Inicio</li>
+                    <li className={getClass('productos')} onClick={() => setRoute('productos')}>Productos</li>
+                    <li className={getClass('contacto')} onClick={() => setRoute('contacto')}>Contacto</li>
                     <li className='li-botones'>
                         <button className='nav-mi-perfil'>Mi perfil</button>
                         <div className='nav-mi-carrito-container'>

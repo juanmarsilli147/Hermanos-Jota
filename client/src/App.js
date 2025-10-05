@@ -1,16 +1,20 @@
 import './css/App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import MainContent from './components/MainContent';
+import { useState } from 'react';
+import Index from './pages/Index';
 
 function App() {
+  const [route, setRoute] = useState('index');
   return (
     <>
-      <Navbar />
+      <Navbar route={route} setRoute={setRoute}/>
       
-      <MainContent/>
+      <main>
+        {route === 'index' && <Index/>}
+      </main>
 
-      <Footer/>
+      <Footer setRoute={setRoute}/>
     </>
   );
 }
