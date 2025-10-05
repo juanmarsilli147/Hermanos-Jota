@@ -66,6 +66,7 @@ header{
     bottom: 0;
     transform: translateX(100%);
     transition: all 0.2s ease-in-out;
+    color: var(--alabastro);
 }
 
 .visible{
@@ -76,13 +77,11 @@ header{
 .abrir-menu, .cerrar-menu{
     border: none;
     background-color: transparent;
-    z-index: 20;
 }
 
 .fa-bars, .fa-xmark{
     font-size: 44px;
     color: var(--alabastro);
-    width: fit-content;
 }
 
 .nav-cart, .nav-mi-carrito-container{
@@ -111,8 +110,9 @@ header{
     flex-direction: column;
     align-items: end;
     gap: 1rem;
-    padding-top: 100px;
+    margin-top: 40px;
 }
+
 
 .li-botones{
     display: flex;
@@ -133,12 +133,11 @@ header{
 .logo img{
     width: 50px;
     height: auto;
-    cursor: pointer;
 }
 
 .nav-mi-carrito, .nav-mi-perfil{
     background-color: var(--alabastro);
-    color: #2D2D2D;
+    color: var(--alabastro);
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -150,15 +149,28 @@ header{
     position: relative;
 }
 
-.nav-link{
-    color: var(--alabastro);
+.in-page a, .nav-link a{
+    color: #f5e6d3ec;
     font-family: var(--fuente-primaria);
     font-weight: 500;
     font-size: 24px;
     position: relative;
     text-decoration: none;
     border-bottom: 2px solid transparent;
-    cursor: pointer;
+}
+
+.in-page a{
+    color: var(--alabastro);
+}
+
+.in-page a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--alabastro);
 }
 
 .icons-nav{
@@ -501,7 +513,6 @@ footer a{
 /* Derechos */
 
 .copy{
-    font-family: var(--fuente-primaria);
     width: 100%;
     text-align: center;
     align-self: end;
@@ -534,10 +545,10 @@ footer h4{
     font-size: 16px;
 }
 
-.footer-navegacion{
+.footer-navegacion .in-page a{
     font-size: 16px;
 }
-.footer-navegacion::before{
+.footer-navegacion .in-page a::before{
     display: none;
 }
 
@@ -554,14 +565,8 @@ footer h4{
     font-family: var(--fuente-primaria);
 }
 
-.icono-contacto{
+.fa-regular, .fa-brands{
     margin-right: 5px;
-}
-.icono-contacto{
-    fill: currentColor;
-    color: var(--alabastro);
-    font-size: 16px;
-    filter: drop-shadow(0 0 0px rgb(255, 255, 255));
 }
 
 
@@ -1167,7 +1172,7 @@ footer h4{
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding: 0;
+        margin: 0;
         gap: 20px;
     }
 
@@ -1177,7 +1182,7 @@ footer h4{
         gap: 15px;
     }
 
-    .nav-link-icon{
+    .nav-link-icon a{
         color: #f5e6d3ec;
         font-family: var(--fuente-primaria);
         font-weight: 500;
@@ -1185,7 +1190,6 @@ footer h4{
         position: relative;
         text-decoration: none;
         border-bottom: 2px solid transparent;
-        cursor: pointer;
         transition: all 0.3s ease;
     }
 
@@ -1282,7 +1286,7 @@ footer h4{
         font-size: 22px;
     }
 
-    .footer-navegacion ul, .footer-contacto{
+    .footer-navegacion ul, .footer-navegacion .in-page a, .footer-contacto{
         font-size: 18px;
     }
 
@@ -1290,7 +1294,7 @@ footer h4{
         font-size: 18px;
     }
 
-    .footer-navegacion::before{
+    .footer-navegacion .in-page a::before{
         display: block;
     }
 
@@ -1493,10 +1497,9 @@ footer h4{
         font-weight: bold;
         font-size: 28px;
         color: var(--alabastro);
-        cursor: pointer;
     }
 
-    .nav-link::before{
+    .nav-link a::before{
         content: '';
         position: absolute;
         bottom: 0;
@@ -1509,15 +1512,15 @@ footer h4{
         transition: transform 0.3s ease;
     }
 
-    .nav-link:hover::before{
+    .nav-link a:hover::before{
         transform: scaleX(1);
     }
-    .nav-link:hover{
+    .nav-link a:hover{
         color: var(--alabastro);
         transition: all 0.3s ease;
     }
 
-    .nav-link-icon:hover{
+    .nav-link-icon a:hover{
         color: var(--alabastro);
     }
 
@@ -1629,9 +1632,8 @@ footer h4{
         gap: 20px;
     }
 
-    .footer-link, .contacto{
+    .footer-navegacion .in-page a, .footer-link a, .contacto{
         font-size: 1rem;
-        cursor: pointer;
         transition: all 0.2s ease;
     }
 
@@ -1646,7 +1648,11 @@ footer h4{
         grid-row: 2;
     }
 
-    .footer-link:hover{
+    .footer-navegacion .in-page a:hover{
+        font-size: 1.125rem;
+    }
+
+    .footer-link a:hover{
         font-size: 1.125rem;
     }
 
@@ -1729,13 +1735,29 @@ footer h4{
 
 @media (min-width: 600px) {
   .search-bar {
-    max-width: 900px;
+    max-width: 80vw;
     margin: 0 auto 2rem auto;
   }
+  .links-nav a {
+    font-size: 30px;
+}
 }
 
 @media (min-width: 1024px) {
   .search-bar {
-    max-width: 1200px;
+    max-width: 60vw;
   }
+  .search-bar input {
+    margin-left: 15px;
+  }
+
+  .links-nav a {
+    font-size: 18px;
+    }
+
+  .nav-link-icon {
+    font-size: 15px;
+    cursor: pointer;
+    }
+
 }
