@@ -9,7 +9,7 @@ function Navbar({route, setRoute}){
     return (
         <header>
             {/* Logo */}
-            <section className='logo'>
+            <section className='logo' onClick={() => setRoute('index')}>
                 <img src='http://localhost:4000/img/logoinvertido.svg' alt="Logo"/>
                 <p className='nombre-marca'>Hermanos JOTA</p>
             </section>

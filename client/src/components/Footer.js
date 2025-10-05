@@ -7,7 +7,7 @@ function Footer({setRoute}){
         <footer>
             {/* Logo footer */}
             <section className='footer-marca'>
-                <div className='footer-logo'>
+                <div className='footer-logo' onClick={() => setRoute('index')}>
                     <div>
                         <img src='http://localhost:4000/img/logoinvertido.svg' alt='Logo Hermanos Jota'/>
                     </div>

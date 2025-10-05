@@ -11,7 +11,7 @@ function App() {
       <Navbar route={route} setRoute={setRoute}/>
       
       <main>
-        {route === 'index' && <Index/>}
+        {route === 'index' && <Index setRoute={setRoute}/>}
       </main>
 
       <Footer setRoute={setRoute}/>

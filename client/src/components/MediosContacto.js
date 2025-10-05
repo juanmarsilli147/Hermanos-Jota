@@ -68,16 +68,16 @@ function MediosContacto(){
     return (
         <>
             {/* Contacto de información */}
-            <p className="contacto"><a href="mailto:info@hermanosjota.com.ar"><span className="texto">{info}</span> <FontAwesomeIcon icon={faEnvelope} className="icono-contacto"/></a></p>
+            <p className="contacto"><a href="mailto:info@hermanosjota.com.ar" rel="noopener noreferrer" target="_blank"><span className="texto">{info}</span> <FontAwesomeIcon icon={faEnvelope} className="icono-contacto"/></a></p>
 
             {/* Contacto de ventas */}
-            <p className="contacto"><a href="mailto:ventas@hermanosjota.com.ar"><span className="texto">{ventas}</span> <FontAwesomeIcon icon={faEnvelope} className="icono-contacto"/></a></p>
+            <p className="contacto"><a href="mailto:ventas@hermanosjota.com.ar" rel="noopener noreferrer" target="_blank"><span className="texto">{ventas}</span> <FontAwesomeIcon icon={faEnvelope} className="icono-contacto"/></a></p>
 
             {/* Instagram */}
-            <p className="contacto"><a href="https://instagram.com/hermanosjota_ba"><span className="texto">{instagram}</span> <FontAwesomeIcon icon={faInstagram} className="icono-contacto"/></a></p>
+            <p className="contacto"><a href="https://instagram.com/hermanosjota_ba" rel="noopener noreferrer" target="_blank"><span className="texto">{instagram}</span> <FontAwesomeIcon icon={faInstagram} className="icono-contacto"/></a></p>
             
             {/* Whatsapp */}
-            <p className="contacto"><a href="https://wa.me/541145678900"><span className="texto">{whatsapp}</span> <FontAwesomeIcon icon={faWhatsapp} className="icono-contacto"/></a></p>
+            <p className="contacto"><a href="https://wa.me/541145678900" rel="noopener noreferrer" target="_blank"><span className="texto">{whatsapp}</span> <FontAwesomeIcon icon={faWhatsapp} className="icono-contacto"/></a></p>
         </>
     )
 }

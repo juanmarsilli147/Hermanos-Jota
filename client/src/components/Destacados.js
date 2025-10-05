@@ -12,7 +12,7 @@ const productosDestacados = (url) => {
     })
 }
 
-function Destacados() {
+function Destacados({setRoute}) {
     const {
         data: featuredProducts,
         error,
@@ -30,7 +30,7 @@ function Destacados() {
                     <p className="sub">Novedades y favoritos de la casa</p>
                 </div>
                 <div className="ver-coleccion">
-                    <button className="btn-ver-coleccion">Ver Colección</button>
+                    <button className="btn-ver-coleccion" onClick={() => setRoute('productos')}>Ver Colección</button>
                 </div>
             </section>
             <section className="destacados-productos">

@@ -2,14 +2,14 @@ import Hero from '../components/Hero';
 import SeparacionSecciones from '../components/SeparacionSecciones';
 import Destacados from '../components/Destacados';
 
-function Index(){
+function Index({setRoute}){
     return(
         <>
-            <Hero/>
+            <Hero setRoute={setRoute}/>
 
             <SeparacionSecciones/>
             
-            <Destacados/>
+            <Destacados setRoute={setRoute}/>
         </>
     )
 }

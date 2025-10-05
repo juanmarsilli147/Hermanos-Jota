@@ -507,6 +507,7 @@ footer a{
     align-items: center;
     gap: 15px;
     width: 50%;
+    cursor: pointer;
 }
 
 .footer-logo div{

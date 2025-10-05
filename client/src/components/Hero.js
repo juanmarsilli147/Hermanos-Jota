@@ -1,4 +1,4 @@
-function Hero(){
+function Hero({setRoute}){
     return(
         <section className="hero">
             {/* texto */}
@@ -10,8 +10,8 @@ function Hero(){
                     uniendo tradición y diseño contemporáneo para logares únicos y significativos.
                 </p>
                 <section className="hero-buttons">
-                    <button className="btn-comprar">Comprar Ahora</button>
-                    <button className="btn-contactanos">Contactanos</button>
+                    <button className="btn-comprar" onClick={() => setRoute('productos')}>Comprar Ahora</button>
+                    <button className="btn-contactanos" onClick={() => setRoute('contacto')}>Contactanos</button>
                 </section>
             </section>
             {/* Imagen principal */}
