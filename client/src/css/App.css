@@ -108,6 +108,7 @@ header{
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: bold;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .links-nav{
@@ -117,6 +118,7 @@ header{
     align-items: end;
     gap: 1rem;
     padding-top: 100px;
+    margin-top: 40px;
 }
 
 .li-botones{
@@ -586,8 +588,6 @@ footer h4{
 
 .icono-contacto{
     margin-right: 5px;
-}
-.icono-contacto{
     fill: currentColor;
     color: var(--alabastro);
     font-size: 16px;
