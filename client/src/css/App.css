@@ -22,6 +22,9 @@
 /* Generales */
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--alabastro);
     padding-top: 100px;
 }
@@ -102,7 +105,9 @@ header{
     padding: 5px;
     border-radius: 50%;
     color: var(--verde-salvia);
+    font-family: 'Poppins', Arial, sans-serif;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .links-nav{
@@ -151,7 +156,7 @@ header{
 }
 
 .nav-link{
-    color: var(--alabastro);
+    color: #f5e6d3ec;
     font-family: var(--fuente-primaria);
     font-weight: 500;
     font-size: 24px;
@@ -160,6 +165,22 @@ header{
     border-bottom: 2px solid transparent;
     cursor: pointer;
 }
+
+.in-page{
+    color: var(--alabastro);
+    position: relative;
+}
+
+.in-page::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--alabastro);
+}
+
 
 .icons-nav{
     display: none;
@@ -356,6 +377,9 @@ main{
     transition: all 0.3s ease;
 }
 
+.mensajeswr{
+    margin: auto;
+}
 
 
 /* Productos */
@@ -485,6 +509,7 @@ footer a{
     align-items: center;
     gap: 15px;
     width: 50%;
+    cursor: pointer;
 }
 
 .footer-logo div{
@@ -534,10 +559,15 @@ footer h4{
     font-size: 16px;
 }
 
-.footer-navegacion{
+.footer-link{
+    position: relative;
+}
+
+.footer-navegacion ul .in-page{
     font-size: 16px;
 }
-.footer-navegacion::before{
+
+.footer-navegacion .in-page::after{
     display: none;
 }
 
@@ -1002,7 +1032,7 @@ footer h4{
 #contacto-main {
     flex-direction: row;
 
-    background-image: url(../assets/img/tablas-madera.jpg);
+    background-image: url(http://localhost:4000/img/tablas-madera.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -1202,7 +1232,7 @@ footer h4{
         width: 100%;
         height: 28.125rem;
         background-image: linear-gradient(to left, transparent 60%, var(--alabastro)),
-        url('../assets/img/sala.jpg');
+        url('http://localhost:4000/img/sala.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1290,7 +1320,7 @@ footer h4{
         font-size: 18px;
     }
 
-    .footer-navegacion::before{
+    .footer-navegacion ul .in-page::after{
         display: block;
     }
 
@@ -1524,7 +1554,7 @@ footer h4{
     /* Hero */
     .hero-image{
         height: 25rem;
-        background-image: url('../assets/img/sala.jpg');
+        background-image: url('http://localhost:4000/img/sala.jpg');
         box-shadow: 0 0 20px #a0512d8a;
     }
 
@@ -1629,7 +1659,7 @@ footer h4{
         gap: 20px;
     }
 
-    .footer-link, .contacto{
+    .footer-navegacion ul .in-page, .footer-link, .contacto{
         font-size: 1rem;
         cursor: pointer;
         transition: all 0.2s ease;
@@ -1644,6 +1674,10 @@ footer h4{
     .copy{
         grid-column: 1 / 4;
         grid-row: 2;
+    }
+
+    .footer-navegacion ul .in-page:hover{
+        font-size: 1.125rem;
     }
 
     .footer-link:hover{

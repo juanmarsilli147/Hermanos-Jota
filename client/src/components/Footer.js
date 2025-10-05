@@ -1,16 +1,15 @@
 import React from 'react';
 import '../css/App.css';
-import logo from '../assets/img/logoinvertido.svg';
 import MediosContacto from './MediosContacto';
 
-function Footer(){
+function Footer({setRoute}){
     return(
         <footer>
             {/* Logo footer */}
             <section className='footer-marca'>
-                <div className='footer-logo'>
+                <div className='footer-logo' onClick={() => setRoute('index')}>
                     <div>
-                        <img src={logo} alt='Logo Hermanos Jota'/>
+                        <img src='http://localhost:4000/img/logoinvertido.svg' alt='Logo Hermanos Jota'/>
                     </div>
                     <p className='footer-nombre-marca'>Hermanos JOTA</p>
                 </div>
@@ -22,9 +21,9 @@ function Footer(){
                 <section className='footer-navegacion'>
                     <h4>Navega</h4>
                     <ul>
-                        <li className='footer-link'>Inicio</li>
-                        <li className='footer-link'>Productos</li>
-                        <li className='footer-link'>Contacto</li>
+                        <li className='footer-link' onClick={() => setRoute('index')}>Inicio</li>
+                        <li className='footer-link' onClick={() => setRoute('productos')}>Productos</li>
+                        <li className='footer-link' onClick={() => setRoute('contacto')}>Contacto</li>
                     </ul>
                 </section>
 
