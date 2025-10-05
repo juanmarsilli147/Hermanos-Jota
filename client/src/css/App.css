@@ -1031,15 +1031,21 @@ footer h4{
 /* Main */
 
 #contacto-main {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     background-image: url(http://localhost:4000/img/tablas-madera.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
 
-    font-family: var(--fuente-primaria);
+    width: 100%;
     margin-bottom: 0;
+
+    font-family: var(--fuente-primaria);
+    
 }
 
 #contacto-card {
