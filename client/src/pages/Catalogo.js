@@ -32,6 +32,9 @@ export default function Catalogo({ setRoute, anadirFuncion }) {
     p.nombre.toLowerCase().includes(busqueda.toLowerCase())
   );
 
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  }, [])
 
   return (
     <main className="main-productos">

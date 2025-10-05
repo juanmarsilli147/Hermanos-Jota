@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-function Navbar({route, setRoute, contador}){
+function Navbar({route, setRoute, contador, scroll}){
     // Menú hamburguesa visibilidad
     const [menuVisible, setVisibilidad] = useState(false);
 
