@@ -59,14 +59,14 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion, onVer
             <p>Cada pieza está elaborada con madera certificada FSC y procesos que reducen la huella de carbono, para un futuro más verde.</p>
           </details>
         </section>
-        <ProductosRelacionados
-          producto={producto}
-          productoId={producto.id}
-          onVerDetalle={onVerDetalle}
-          anadirFuncion={anadirFuncion}
-          setRoute={setRoute}
-        />
       </section>
+      <ProductosRelacionados
+        producto={producto}
+        productoId={producto.id}
+        onVerDetalle={onVerDetalle}
+        anadirFuncion={anadirFuncion}
+        setRoute={setRoute}
+      />
     </>
   );  
 }

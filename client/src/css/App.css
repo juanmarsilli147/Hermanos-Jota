@@ -618,9 +618,9 @@ footer h4{
     padding: 0;
 }
 
-.catalogo h2 {
+.catalogo-h2 {
     text-align: center;
-    font-size:2.5rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
     line-height: 1.2;
     color: var(--siena-tostado);
@@ -693,6 +693,7 @@ footer h4{
     padding: 0;
     max-width: 100vw;
     margin: 0;
+    padding: 1rem;
 }
 
 .card {
@@ -701,7 +702,6 @@ footer h4{
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin: 1rem;
     transition: transform 0.3s ease, box-shadow 0.2s ease;
 }
 
@@ -813,6 +813,10 @@ footer h4{
     line-height: 1.6;
 }
 
+.producto-info .detalleProducto-body{
+    text-align: left;
+}
+
 /* Main */
 
 .detalle-h2, .detalle-h3, .detalle-summary  {
@@ -820,6 +824,17 @@ footer h4{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 700;
+    text-align: center;
+    color: var(--siena-tostado);
+}
+
+.detalle-summary{
+    text-align: left;
+}
+
+.detalles-lista, .sustentabilidad p{
+    margin-top: 10px;
+    text-align: left;
 }
 
 .texto-cuerpo {
@@ -856,6 +871,7 @@ footer h4{
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     padding: 2rem 1rem;
 }
@@ -936,6 +952,32 @@ footer h4{
     justify-content: space-between;
     align-items: center;
     color: var(--alabastro);
+}
+
+.productos-relacionados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.productos-relacionados .detalle-h2{
+    margin-bottom: 15px;
+}
+
+.relacionados-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.relacionados-flex div .card{
+    width: 100%;
 }
 
 .relacionados-img {
@@ -1313,6 +1355,15 @@ footer h4{
         font-size: 20px;
     }
 
+    .relacionados-flex{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .relacionados-flex div .card{
+        width: 400px;
+    }
+
     /* Footer */
 
     footer h4{
@@ -1335,7 +1386,7 @@ footer h4{
 
     /* Títulos principales */
 
-    .detalle-h2, .detalle-h3 {
+    .detalle-h3 {
         font-family: 'Playfair Display', Georgia, serif;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -1437,7 +1488,7 @@ footer h4{
         line-height: 1.6;
     }
     .detalle-h2{
-        font-size: 28px;
+        font-size: 36px;
         margin-bottom: 1rem;
     }
     /* relacionados */
