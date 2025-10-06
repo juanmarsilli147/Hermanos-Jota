@@ -815,6 +815,7 @@ footer h4{
 
 .producto-info .detalleProducto-body{
     text-align: left;
+    margin: 0;
 }
 
 /* Main */
@@ -860,11 +861,11 @@ footer h4{
     letter-spacing: 0.08em;
 }
 
-.precio-prod {
-    font-size: 1.9rem;
+.producto-info .precio-prod {
+    font-size: 26px;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 .producto {
@@ -1488,6 +1489,7 @@ footer h4{
         line-height: 1.6;
     }
     .detalle-h2{
+        text-align: left;
         font-size: 36px;
         margin-bottom: 1rem;
     }
@@ -1690,6 +1692,10 @@ footer h4{
     .ver-detalle:hover{
         color: var(--alabastro);
         background-color: var(--rosa-polvo);
+    }
+
+    .detalle-h2{
+        text-align: center;
     }
 
     /* Footer */
