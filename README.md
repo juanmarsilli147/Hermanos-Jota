@@ -28,7 +28,7 @@ El nuevo sistema permite visualizar productos, ver sus detalles, simular un carr
 **Ejecutar los siguientes comandos en orden**
 - cd server 
 - npm install
-- npm start
+- npm run dev
 - Servidor corriendo en el http://localhost:4000
 
 ### Incializacion del frontend
@@ -51,7 +51,7 @@ El nuevo sistema permite visualizar productos, ver sus detalles, simular un carr
   - Catálogo de productos  
   - Detalle de producto  
   - Formulario de contacto  
-- Simulación de carrito con contador global manejado en `App.jsx`.  
+- Simulación de carrito con contador global manejado en `App.js`.  
 - Estilos con diseño **responsive (Mobile First)** usando Flexbox y Grid.
 
 ### Backend (Node.js + Express)
