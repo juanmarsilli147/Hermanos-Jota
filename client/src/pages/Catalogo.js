@@ -39,7 +39,7 @@ export default function Catalogo({ setRoute, anadirFuncion }) {
   return (
     <main className="main-productos">
       <section className="catalogo">
-        <h2>Catálogo de Productos</h2>
+        <h2 className="catalogo-h2">Catálogo de Productos</h2>
         <p>Explora nuestra selección de muebles para tu hogar y oficina.</p>
         <SearchBar onBuscar={setBusqueda}/>
 
