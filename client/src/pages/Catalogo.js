@@ -55,6 +55,7 @@ export default function Catalogo({ setRoute, anadirFuncion }) {
           />
         ) : (
           <ProductDetail
+            key={productoSeleccionado.id}
             producto={productoSeleccionado}
             productos={productos}
             onVolver={() => setProductoSeleccionado(null)}
