@@ -44,12 +44,12 @@ export default function ProductosRelacionados({ producto, anadirFuncion, onVerDe
   return (
     <section className="productos-relacionados">
       <h2 className="detalle-h2">Otras personas vieron</h2>
-      <div className="relacionados-grid">
+      <div className="relacionados-flex">
         {seleccionados.map(p => (
-      <div key={p.id}>
-        <ProductCard producto={p} onVerDetalle={() => { onVerDetalle(p); setRoute('productos'); }} anadirFuncion={anadirFuncion} />
-      </div>
-    ))}
+          <div key={p.id}>
+            <ProductCard producto={p} onVerDetalle={() => { onVerDetalle(p); setRoute('productos'); }} anadirFuncion={anadirFuncion} />
+          </div>
+        ))}
       </div>
     </section>
   );
