@@ -4,8 +4,12 @@ const productoRoutes = require('./routes/productoRoutes')
 const logger = require('./logger')
 const cors = require('cors')
 const path = require("path");
+const mongoose = require('mongoose')
+require("dotenv").config()
 
 const app = express()
+
+const MONGODB_URI = process.env.MONGODB_URI
 
 // Servir la carpeta de imágenes
 app.use("/img", express.static(path.join(__dirname, "public/img")));
@@ -19,6 +23,22 @@ app.use(cors({
 
 app.use(express.json())
 app.use(logger)
+
+// Conexion a Base de datos
+mongoose.connect(MONGODB_URI)
+  .then(() => {
+    console.log('Conexión exitosa a MongoDB Atlas');
+    
+    // Iniciar el servidor Express solo después de una conexión exitosa a la DB
+    app.listen(PORT, () => {
+      console.log(`Servidor Express corriendo en http://localhost:${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error al conectar a MongoDB Atlas:', err);
+    process.exit(1); // Detener el proceso si la conexión falla
+  });
+
 app.use('/api/contacto', contactoRoutes)
 app.use('/api/productos', productoRoutes)
 

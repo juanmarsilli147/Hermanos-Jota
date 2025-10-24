@@ -5,6 +5,8 @@ import { useState } from 'react';
 import PaginaInicio from './pages/PaginaInicio';
 import Contacto from './pages/Contacto';
 import Catalogo from './pages/Catalogo';
+import {Routes, Route} from 'react-router-dom'
+
 
 function App() {
   const [route, setRoute] = useState('index');
@@ -16,13 +18,15 @@ function App() {
 
   return (
     <>
-      <Navbar route={route} setRoute={setRoute} contador={carrito.length}/>
+      <Navbar contador={carrito.length}/>
       
-      {route === 'index' && <PaginaInicio setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
-      {route === 'productos' && <Catalogo setRoute={setRoute} anadirFuncion={anadirAlCarrito}/>}
-      {route === 'contacto' && <Contacto setRoute={setRoute}/>}
+      <Routes>
+          <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
+          <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito}/>}/>
+          <Route path='/contacto' element={<Contacto/>}/>
+      </Routes>
 
-      <Footer setRoute={setRoute}/>
+      <Footer/>
     </>
   );
 }

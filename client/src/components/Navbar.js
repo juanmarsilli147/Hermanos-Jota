@@ -3,21 +3,22 @@ import BurgerMenu from './BurgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-function Navbar({route, setRoute, contador, scroll}){
+function Navbar({contador}){
     // Menú hamburguesa visibilidad
     const [menuVisible, setVisibilidad] = useState(false);
 
     // Clases para la nav
-    const getClass = (target) => route === target ? 'nav-link in-page' : 'nav-link'
+    const getNavLinkClass = ({ isActive }) => isActive ? 'nav-link in-page' : 'nav-link';
 
     return (
         <header>
             {/* Logo */}
-            <section className='logo' onClick={() => setRoute('index')}>
+            <Link to="/" className='logo' onClick={() => setVisibilidad(false)}>
                 <img src='http://localhost:4000/img/logoinvertido.svg' alt="Logo"/>
                 <p className='nombre-marca'>Hermanos JOTA</p>
-            </section>
+            </Link>
 
             {/* Menú hamburguesa */}
             <BurgerMenu visibilidad={menuVisible} cambiarVisibilidad={setVisibilidad}/>
@@ -25,20 +26,24 @@ function Navbar({route, setRoute, contador, scroll}){
             {/* nav */}
             <nav className={menuVisible ? 'nav visible' : 'nav'}>
                 <ul className='links-nav'>
-                    {/* Ir al index */}
-                    <li className={getClass('index')} onClick={() => {
-                        setRoute('index');
-                        setVisibilidad(false)}}>Inicio</li>
+                    {/* Ir al index */}              
+                    <NavLink to="/" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                        Inicio
+                    </NavLink>
+                    
 
                     {/* Ir a productos */}
-                    <li className={getClass('productos')} onClick={() => {
-                        setRoute('productos');
-                        setVisibilidad(false)}}>Productos</li>
+                    <NavLink to="/productos" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                        Productos
+                    </NavLink>
+                    
 
                     {/* Ir a contacto */}
-                    <li className={getClass('contacto')} onClick={() => {
-                        setRoute('contacto');
-                        setVisibilidad(false)}}>Contacto</li>
+                    
+                    <NavLink to="/contacto" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                        Contacto
+                    </NavLink>
+                    
 
                     <li className='li-botones'>
                         <button className='nav-mi-perfil'>Mi perfil</button>
