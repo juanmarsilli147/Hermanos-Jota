@@ -12,7 +12,7 @@ const productoSchema = new Schema({
     acabado: { type: String, required: true },
     peso: { type: String, required: true },
     capacidad: { type: String, required: true },
-    enlace: { type: String, required: true },
+    enlace: { type: String, required: true }
 })
 
 const Producto = model('Producto', productoSchema)

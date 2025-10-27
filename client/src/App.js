@@ -6,6 +6,8 @@ import PaginaInicio from './pages/PaginaInicio';
 import Contacto from './pages/Contacto';
 import Catalogo from './pages/Catalogo';
 import {Routes, Route} from 'react-router-dom'
+import CrearProducto from './pages/CrearProducto';
+import AdminPanel from './pages/AdminPanel';
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
           <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
           <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito}/>}/>
           <Route path='/contacto' element={<Contacto/>}/>
+          <Route path='/admin' element={<AdminPanel />}>
+            <Route path='crear-producto' element={<CrearProducto />} />
+          </Route>
       </Routes>
 
       <Footer/>
