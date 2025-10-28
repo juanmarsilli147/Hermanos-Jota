@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {validacionCampos, alertas, enviarFormulario} from "./funcionesContacto"
+import {validacionCampos, alertas, enviarFormulario} from "./funcionesProductoNuevo"
 import { OverlayForm } from "./OverlayForm"
 
 function CrearProductoFormulario() {
@@ -61,50 +61,142 @@ function CrearProductoFormulario() {
 
     // -- DEVOLUCIÓN DE FORMULARIO -- //
     return (
-        <form id="contacto-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso})} noValidate>
+        <form id="productoNuevo-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso})} noValidate>
             <div>
-                <label htmlFor="nombre" className="contacto-label">Nombre</label><br></br>
+                <label htmlFor="nombre" className="productoNuevo-label">Nombre</label><br></br>
                 <input 
                     id="nombre"
                     type="text"                 
                     name="nombre" 
-                    className="contacto-input" 
+                    className="productoNuevo-input" 
                     value={datos.nombre}
                     onChange={actualizarDatos}
+                    placeholder="Ej.: Aparador Uspallata"
                     required
                 />
                 {errores.nombre && <p className="error-validacion">{errores.nombre}</p>}
             </div>
 
             <div>
-                <label htmlFor="email" className="contacto-label">E-mail</label><br></br>
-                <input 
-                    id="email" 
-                    type="email"                 
-                    name="email" 
-                    className="contacto-input" 
-                    value={datos.email}
-                    onChange={actualizarDatos}
-                    required 
-                />
-                {errores.email && <p className="error-validacion">{errores.email}</p>}
-            </div>
-
-            <div>
-                <label htmlFor="mensaje-form" className="contacto-label">Mensaje</label><br></br>
+                <label htmlFor="descripcion-form" className="productoNuevo-label">Descripción</label><br></br>
                 <textarea 
-                    id="mensaje-form" 
-                    name="mensaje" 
+                    id="descripcion-form" 
+                    name="descripcion" 
                     rows="6" 
-                    value={datos.mensaje}
+                    value={datos.descripcion}
                     onChange={actualizarDatos}
+                    placeholder="Ej.: Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Su silueta minimalista realza el veteado natural de la madera, creando una pieza que combina funcionalidad y elegancia atemporal para espacios contemporáneos."
                     required
                 />
-                {errores.mensaje && <p className="error-validacion">{errores.mensaje}</p>}
+                {errores.descripcion && <p className="error-validacion">{errores.descripcion}</p>}
             </div>
 
             <div>
-                <button id="contacto-button" type="submit">Enviar mensaje</button>
+                <label htmlFor="descripcionDestacado-form" className="productoNuevo-label">Descripción para destacados</label><br></br>
+                <textarea 
+                    id="descripcionDestacado-form" 
+                    name="descripcionDestacado" 
+                    rows="6" 
+                    value={datos.descripcionDestacado}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: Nogal sostenible con detalles en latón"
+                    required
+                />
+                {errores.descripcionDestacado && <p className="error-validacion">{errores.descripcionDestacado}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="precio" className="productoNuevo-label">Precio ($)</label><br></br>
+                <input 
+                    id="precio"
+                    type="number"                 
+                    name="precio" 
+                    className="productoNuevo-input" 
+                    value={datos.precio}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: 190000"
+                    required
+                />
+                {errores.precio && <p className="error-validacion">{errores.precio}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="materiales" className="productoNuevo-label">Materiales</label><br></br>
+                <input 
+                    id="materiales"
+                    type="text"                 
+                    name="materiales" 
+                    className="productoNuevo-input" 
+                    value={datos.materiales}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: Nogal macizo FSC®, herrajes de latón"
+                    required
+                />
+                {errores.materiales && <p className="error-validacion">{errores.materiales}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="medidas" className="productoNuevo-label">Medidas</label><br></br>
+                <input 
+                    id="medidas"
+                    type="text"                 
+                    name="medidas" 
+                    className="productoNuevo-input" 
+                    value={datos.medidas}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: 100 x 35 x 200 cm"
+                    required
+                />
+                {errores.medidas && <p className="error-validacion">{errores.medidas}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="acabado" className="productoNuevo-label">Acabado</label><br></br>
+                <input 
+                    id="acabado"
+                    type="text"                 
+                    name="acabado" 
+                    className="productoNuevo-input" 
+                    value={datos.acabado}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: Aceite natural ecológico"
+                    required
+                />
+                {errores.acabado && <p className="error-validacion">{errores.acabado}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="peso" className="productoNuevo-label">Peso</label><br></br>
+                <input 
+                    id="peso"
+                    type="text"                 
+                    name="peso" 
+                    className="productoNuevo-input" 
+                    value={datos.peso}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: 68 kg"
+                    required
+                />
+                {errores.peso && <p className="error-validacion">{errores.peso}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="capacidad" className="productoNuevo-label">Capacidad</label><br></br>
+                <input 
+                    id="capacidad"
+                    type="text"                 
+                    name="capacidad" 
+                    className="productoNuevo-input" 
+                    value={datos.capacidad}
+                    onChange={actualizarDatos}
+                    placeholder="Ej.: 6 compartimentos interiores"
+                    required
+                />
+                {errores.capacidad && <p className="error-validacion">{errores.capacidad}</p>}
+            </div>
+
+            <div>
+                <button id="productoNuevo-button" type="submit">Agregar producto</button>
             </div>
             {envioExitoso && <OverlayForm />}
         </form>

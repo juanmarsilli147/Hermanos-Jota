@@ -1069,7 +1069,7 @@ footer h4{
     text-align: center;
 }
 
-/* ! CONTACTO PAGE */
+/* ! CONTACTO PAGE Y NUEVO PRODUCTO PAGE*/
 
 /* Main */
 
@@ -1109,6 +1109,21 @@ footer h4{
     text-align: center;
 }
 
+#crearProducto-card {
+    background-color: var(--alabastro);
+    color: var(--siena-tostado);
+    width: 50vw;
+    margin: 3%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
 #contacto-titulo {
     font-size: 1.75rem;
     font-weight: bold;
@@ -1116,10 +1131,20 @@ footer h4{
     margin-bottom: 1rem;
 }
 
-#contacto-texto {
+#contacto-texto, #crearProducto-texto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#crearProducto-texto h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1%;
+}
+
+#crearProducto-texto {
+    font-size: 1.25rem;
 }
 
 #mensaje p {
@@ -1145,11 +1170,21 @@ footer h4{
     gap: 0.5rem;
 }
 
-.contacto-label, #contacto-button {
+#productoNuevo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto-label, #contacto-button, .productoNuevo-label, #productoNuevo-button {
     font-size: 1rem;
 }
 
-.contacto-input, #mensaje-form, #contacto-button {
+.productoNuevo-label {
+    font-weight: 500;
+}
+
+.contacto-input, #mensaje-form, #contacto-button, .productoNuevo-input, #descripcion-form, #descripcionDestacado-form, #productoNuevo-button {
     border: none;
     width: 100%;
     resize: none;
@@ -1158,18 +1193,18 @@ footer h4{
     font-size: 0.9rem;
 }
 
-.contacto-input, #contacto-button {
+.contacto-input, #contacto-button, .productoNuevo-input, #productoNuevo-button {
     height: 2.5rem;
 }
 
-#contacto-button {
+#contacto-button, #productoNuevo-button {
     background-color: var(--vara-oro);
     border: none;
     color: white;
     cursor: pointer;
 }
 
-.contacto-input:focus, #mensaje-form:focus {
+.contacto-input:focus, #mensaje-form:focus, .productoNuevo-input:focus, #descripcion-form:focus, #descripcionDestacado-form:focus {
     outline: 2px solid var(--siena-tostado);
 }
 
@@ -1534,7 +1569,7 @@ footer h4{
 
     /* Productos */
 
-    /* ! CONTACTO PAGE */
+    /* ! CONTACTO PAGE Y NUEVO PRODUCTO PAGE*/
 
     /* Main */
 
@@ -1547,7 +1582,13 @@ footer h4{
         text-align: left;
     }
 
-    #contacto-texto {
+    #crearProducto-card {
+        width: 95vw;
+        margin: 3%;
+        text-align: left;  
+    }
+
+    #contacto-texto, #crearProducto-texto {
         padding-right: 5%;
     }
 
@@ -1572,6 +1613,7 @@ footer h4{
     form {
         height: 100%;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -1755,7 +1797,7 @@ footer h4{
         transform: translateX(20px);
     }
 
-    /* ! CONTACTO PAGE */
+    /* ! CONTACTO PAGE Y NUEVO PRODUCTO PAGE */
 
     /* Main */
 
@@ -1767,11 +1809,11 @@ footer h4{
         padding: 0;
     }
 
-    .contacto-input, #contacto-button {
+    .contacto-input, #contacto-button, .productoNuevo-input, #productoNuevo-button {
         height: 3rem;
     }
 
-    #contacto-button {
+    #contacto-button, #productoNuevo-button {
         font-size: 1rem;
     }
 }
@@ -1787,6 +1829,18 @@ footer h4{
         padding: 3%;
         margin: 5%;
         font-size: 1rem;
+    }
+
+    #crearProducto-card {
+        width: 95vw;
+        margin: 3%;
+        text-align: left;  
+    }
+
+    #crearProducto-texto h2 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 1%;
     }
 }
 
