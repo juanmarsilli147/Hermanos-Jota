@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import {validacionCampos, alertas, enviarFormulario} from "./funcionesProductoNuevo"
-import { OverlayForm } from "./OverlayForm"
+import { OverlayFormProducto } from "./OverlayFormProducto"
 
 function CrearProductoFormulario() {
 
@@ -198,7 +198,7 @@ function CrearProductoFormulario() {
             <div>
                 <button id="productoNuevo-button" type="submit">Agregar producto</button>
             </div>
-            {envioExitoso && <OverlayForm />}
+            {envioExitoso && <OverlayFormProducto />}
         </form>
     )
 }
