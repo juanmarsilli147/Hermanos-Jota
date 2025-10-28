@@ -7,7 +7,7 @@ function CrearProductoFormulario() {
     // --ESTADOS -- //
     //Estado de los datos del form
     const [datos, setDatos] = useState({
-        id: "",
+        id: "", //AGREGAR ID PERSONALIZADO EN FUNCIÓN DE LA LONGITUD DEL ARRAY DE PRODUCTOS
         nombre: "",
         descripcion: "",
         descripcionDestacado: "",
