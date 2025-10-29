@@ -119,14 +119,14 @@ function CrearProductoFormulario() {
                     rows="6" 
                     value={datos.descripcion}
                     onChange={actualizarDatos}
-                    placeholder="Ej.: Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Su silueta minimalista realza el veteado natural de la madera, creando una pieza que combina funcionalidad y elegancia atemporal para espacios contemporáneos."
+                    placeholder="Ej.: Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Su silueta minimalista realiza el veteado natural de la madera, combinando funcionalidad y elegancia."
                     required
                 />
                 {errores.descripcion && <p className="error-validacion">{errores.descripcion}</p>}
             </div>
 
             <div>
-                <label htmlFor="descripcionDestacado-form" className="productoNuevo-label">Descripción para destacados</label><br></br>
+                <label htmlFor="descripcionDestacado-form" className="productoNuevo-label">Descripción resumida para destacados</label><br></br>
                 <textarea 
                     id="descripcionDestacado-form" 
                     name="descripcionDestacado" 
@@ -227,6 +227,11 @@ function CrearProductoFormulario() {
                     required
                 />
                 {errores.capacidad && <p className="error-validacion">{errores.capacidad}</p>}
+            </div>
+
+            <div>
+                <label htmlFor="imagen" className="productoNuevo-label">Imagen</label><br></br>
+                <input id="imagen" type="file" name="imagen" className="productoNuevo-input" onChange={actualizarDatos} required/>
             </div>
 
             <div>

@@ -11,7 +11,8 @@ const CrearProducto = () => {
         <main id='crearProducto-main'>
             <article id='crearProducto-card'>
                 <section id='crearProducto-texto'>
-                    <h2>Agregado de productos</h2>
+                    <h1>Crea un nuevo producto</h1>
+                    <div></div>
                 </section>
 
                 <section id='crearProducto-formulario'>

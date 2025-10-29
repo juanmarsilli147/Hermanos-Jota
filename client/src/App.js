@@ -26,9 +26,8 @@ function App() {
           <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
           <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito}/>}/>
           <Route path='/contacto' element={<Contacto/>}/>
-          <Route path='/admin' element={<AdminPanel />}>
-            <Route path='crear-producto' element={<CrearProducto />} />
-          </Route>
+          <Route path='/admin' element={<AdminPanel />}/>
+          <Route path='/admin/crear-producto' element={<CrearProducto />} />
       </Routes>
 
       <Footer/>

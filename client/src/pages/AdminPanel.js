@@ -1,15 +1,19 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const AdminPanel = () => {
     return (
-        <>
-            <h1>Panel de aministración</h1>
-            <h3>¡Bienvenido/a administrador/a!</h3>
+        <main className="admin-panel">
+            <section className="admin-title">
+                <h1>Panel de Administración</h1>
+                <div></div>
+            </section>
+            <section className="admin-bienvenida">
+                <h2>¡Bienvenido/a administrador/a!</h2>
+                <p>¡Amplía el catálogo de tu tienda añadiendo nuevos productos!</p>
+            </section>
 
-            <Link to="/admin/crear-producto">Crear producto</Link>
-
-            <Outlet />
-        </>
+            <Link to="/admin/crear-producto"><button>Añadir Producto</button></Link>
+        </main>
     )
 }
 
