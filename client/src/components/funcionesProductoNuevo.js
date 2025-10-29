@@ -1,7 +1,8 @@
 // ---VALIDACIÓN Y ENVÍO DEL FORM (PRODUCTO NUEVO)---
 
-// Función validadora de campos
+// -- FUNCIÓN VALIDADORA DE CAMPOS -- //
 export function validacionCampos({
+    id,
     nombre, 
     descripcion, 
     descripcionDestacado, 
@@ -13,7 +14,7 @@ export function validacionCampos({
     capacidad
 }) {
     //Se creaa la expresión regular para verificar que los campos con texto sean válidos
-    const regexTexto = /^[\p{L}\p{N}\p{S}\s.,;:()'"°%×x\-–\/]+$/u               //texto en general con caracteres especiales
+    const regexTexto = /^[\p{L}\p{N}\p{S}\s.,;:()'"°%×x\-–\/!?¿¡]+$/u               //texto en general con caracteres especiales
     const regexMedidas = /^\s*\d+(?:\s*[×xX]\s*\d+){1,2}\s+[^\d×xX\s]+.*$/u     // para que sea del tipo <numero> x <numero> x <numero> <texto>
     const regexPeso = /^\s*\d+(?:[.,]\d+)?\s+[^\d\s]+.*$/u                      // para que sea del tipo <numero> <texto>
 
@@ -34,7 +35,7 @@ export function validacionCampos({
     return validaciones
 }
 
-// Función generadora de alerts
+// -- FUNCIÓN GENERADORA DE ALERTS -- //
 export function alertas({
     valNombre,
     valDescripcion,
@@ -63,7 +64,8 @@ export function alertas({
   return errores
 }
 
-// Función encargada de enviar el formulario de producto al backend
+
+// -- FUNCIÓN ENCARGADA DE ENVIAR EL FORMULARIO DE PRODUCTO AL BACKEND -- //
 export async function enviarFormulario({
     evento,
     datos,
@@ -88,6 +90,7 @@ export async function enviarFormulario({
     if (!datosValidos) return
 
     try {
+
         const respuesta = await fetch(`http://localhost:4000/api/productos`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -110,6 +113,7 @@ export async function enviarFormulario({
             setExitoso(false)
 
             setDatos({
+                id: "",
                 nombre: "",
                 descripcion: "",
                 descripcionDestacado: "",

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import {validacionCampos, alertas, enviarFormulario} from "./funcionesProductoNuevo"
 import { OverlayFormProducto } from "./OverlayFormProducto"
 
@@ -7,11 +7,11 @@ function CrearProductoFormulario() {
     // --ESTADOS -- //
     //Estado de los datos del form
     const [datos, setDatos] = useState({
-        id: "", //AGREGAR ID PERSONALIZADO EN FUNCIÓN DE LA LONGITUD DEL ARRAY DE PRODUCTOS
+        id: "",
         nombre: "",
         descripcion: "",
         descripcionDestacado: "",
-        precio: null,
+        precio: "",
         imagen: "",
         materiales: "",
         medidas: "",
@@ -27,7 +27,7 @@ function CrearProductoFormulario() {
         nombre: "",
         descripcion: "",
         descripcionDestacado: "",
-        precio: null,
+        precio: "",
         imagen: "",
         materiales: "",
         medidas: "",
@@ -58,6 +58,40 @@ function CrearProductoFormulario() {
             setErrores(mensajes)
         }     
     }
+
+    useEffect(() => {
+        // -- FUNCIÓN AGREGADO DE ID -- //
+        // DE PRUEBA PARA TENER UN ID, MODIFICAR/ELIMINAR UNA VEZ QUE SE USE EL _ID DE MONGODB
+        const obtenerId = async () => {
+
+            try {
+
+                const respuesta = await fetch("http://localhost:4000/api/productos")
+                
+                if (!respuesta.ok) {
+                    throw new Error(`Error HTTP: estado ${respuesta.status}`)
+                }
+                
+                const data = await respuesta.json()
+
+                console.log("Catálogo recibido:", data)
+
+                const idProductoNuevo = data.length + 1
+
+                setDatos(prevDatos => ({ 
+                    ...prevDatos, 
+                    id: idProductoNuevo, 
+                    enlace: `detalleproductos.html?id=${idProductoNuevo}` 
+                }))
+
+            } catch (error) {
+                console.error("Error al recibir el catalogo:", error)
+                alert("Se produjo un error al recibir el catalogo. Intente nuevamente.")
+            }
+        }
+
+        obtenerId()
+    }, [])
 
     // -- DEVOLUCIÓN DE FORMULARIO -- //
     return (
