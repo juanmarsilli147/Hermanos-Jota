@@ -89,12 +89,26 @@ export async function enviarFormulario({
     const datosValidos = Object.values(validaciones).every(v => v)
     if (!datosValidos) return
 
+    const formData = new FormData()
+
+    formData.append('id', datos.id);
+    formData.append('nombre', datos.nombre);
+    formData.append('descripcion', datos.descripcion);
+    formData.append('descripcionDestacado', datos.descripcionDestacado);
+    formData.append('precio', datos.precio);
+    formData.append('imagen', datos.imagen);
+    formData.append('materiales', datos.materiales);
+    formData.append('medidas', datos.medidas);
+    formData.append('acabado', datos.acabado);
+    formData.append('peso', datos.peso);
+    formData.append('capacidad', datos.capacidad);
+    formData.append('enlace', datos.enlace);
+
     try {
 
         const respuesta = await fetch(`http://localhost:4000/api/productos`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(datos)
+            body: formData
         })
 
         if (!respuesta.ok) {
@@ -118,6 +132,7 @@ export async function enviarFormulario({
                 descripcion: "",
                 descripcionDestacado: "",
                 precio: "",
+                imagen: "http://localhost:4000/img/",
                 materiales: "",
                 medidas: "",
                 acabado: "",
@@ -130,6 +145,7 @@ export async function enviarFormulario({
                 descripcion: "",
                 descripcionDestacado: "",
                 precio: "",
+                imagen: "",
                 materiales: "",
                 medidas: "",
                 acabado: "",

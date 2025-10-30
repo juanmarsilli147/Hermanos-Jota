@@ -47,9 +47,17 @@ function CrearProductoFormulario() {
     // -- FUNCIÓN ACTUALIZACIÓN DE DATOS -- //
     //Se define la función encargada de actualizar en tiempo real los campos con lo que el usuario escribe y los mensajes de error
     const actualizarDatos = (d) => {
-        const {name, value} = d.target
+        const {name, type} = d.target
+    
+        let valorActualizado;
+        
+        if (type === "file"){
+            valorActualizado = d.target.files[0]
+        } else {
+            valorActualizado = d.target.value
+        }
 
-        const datosNuevos = { ...datos, [name]: value }
+        const datosNuevos = { ...datos, [name]: valorActualizado}
         setDatos(datosNuevos)
 
         if (intento) {
