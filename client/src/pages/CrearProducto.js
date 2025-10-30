@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import CrearProductoFormulario from '../components/CrearProductoFormulario';
 
-const CrearProducto = () => {
+function CrearProducto ({setProductoSeleccionado}) {
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
@@ -16,7 +16,7 @@ const CrearProducto = () => {
                 </section>
 
                 <section id='crearProducto-formulario'>
-                    <CrearProductoFormulario />
+                    <CrearProductoFormulario setProductoSeleccionado={setProductoSeleccionado}/>
                 </section>
             </article>
         </main>

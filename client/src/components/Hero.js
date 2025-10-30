@@ -1,4 +1,6 @@
-function Hero({setRoute}){
+import {Link} from 'react-router-dom'
+
+function Hero(){
     return(
         <section className="hero">
             {/* texto */}
@@ -10,8 +12,8 @@ function Hero({setRoute}){
                     uniendo tradición y diseño contemporáneo para logares únicos y significativos.
                 </p>
                 <section className="hero-buttons">
-                    <button className="btn-comprar" onClick={() => setRoute('productos')}>Comprar Ahora</button>
-                    <button className="btn-contactanos" onClick={() => setRoute('contacto')}>Contactanos</button>
+                    <Link to='productos'><button className="btn-comprar">Comprar Ahora</button></Link>
+                    <Link to='contacto'><button className="btn-contactanos">Contactanos</button></Link>
                 </section>
             </section>
             {/* Imagen principal */}

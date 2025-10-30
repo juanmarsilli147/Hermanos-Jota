@@ -1,8 +1,20 @@
 const express = require('express')
 const routes = express.Router()
 const Producto = require('../models/Product')
+const multer = require('multer')
+const cloudinary = require('cloudinary').v2
+const streamifier = require('streamifier')
 
+require('dotenv').config()
 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+const storage = multer.memoryStorage();
+const upload = multer({storage: storage})
 
 // GET /api/productos
 routes.get('/', async (req, res) => {
@@ -53,11 +65,33 @@ routes.get("/:id", async (req, res, next) => {
 })
 
 // POST /api/productos
-routes.post("/", async (req, res, next) => {
+routes.post("/", upload.single('imagen'), async (req, res, next) => {
     try{
-        const nuevoProducto = new Producto(req.body)
-        const productoGuardado = await nuevoProducto.save()
-        res.status(201).json(productoGuardado)
+
+        if (!req.file) {
+            throw new Error('No se subió ningún archivo de imagen')
+        }
+
+        streamifier.createReadStream(req.file.buffer).pipe(
+            cloudinary.uploader.upload_stream(
+                {folder: "productos-MuebleriaJota"},
+                async (error, result) => {
+                    if (error) {
+                        return next(error)
+                    }
+
+                    const urlImagen = result.secure_url
+
+                    const nuevoProducto = new Producto({
+                        ...req.body, imagen: urlImagen
+                    })
+
+                    const productoGuardado = await nuevoProducto.save()
+                    res.status(201).json(productoGuardado)
+                }
+            )
+        )
+        
     } catch (error) {
         next(error)
     }

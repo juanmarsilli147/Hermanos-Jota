@@ -15,11 +15,11 @@ function PaginaInicio({setRoute, anadirFuncion}){
         <main>
             {!productoSeleccionado ? (
                 <>
-                    <Hero setRoute={setRoute}/>
+                    <Hero/>
             
                     <SeparacionSecciones/>
                     
-                    <Destacados setRoute={setRoute} anadirFuncion={anadirFuncion} onVerDetalle={(producto) => setProductoSeleccionado(producto)}/>
+                    <Destacados anadirFuncion={anadirFuncion} onVerDetalle={(producto) => setProductoSeleccionado(producto)}/>
                 </>
             ) : (
                 <section className='catalogo'>

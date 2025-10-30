@@ -6,13 +6,6 @@ const cors = require('cors')
 const path = require("path");
 const mongoose = require('mongoose')
 require("dotenv").config()
-const cloudinary = require('cloudinary').v2;
-
-cloudinary.config({
-  cloud_name: 'ditc6lwa2',
-  api_key: '966582973698133',
-  api_secret: 'RwW1PyzymROlVVCPkM_0GNjoXzA'
-})
 
 const app = express()
 const MONGODB_URI = process.env.MONGODB_URI

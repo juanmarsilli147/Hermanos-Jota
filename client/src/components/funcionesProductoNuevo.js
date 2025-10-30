@@ -72,7 +72,9 @@ export async function enviarFormulario({
     setDatos,
     setErrores,
     setIntento,
-    setExitoso
+    setExitoso,
+    setProductoSeleccionado,
+    navigate
 }) {
     // Evita el la recarga automática de la página para evaluar
     evento.preventDefault()
@@ -155,8 +157,11 @@ export async function enviarFormulario({
 
             setIntento(false)
 
-        }, 3000)
+            setProductoSeleccionado(data)
+            navigate('/productos')
 
+        }, 3000)
+        
     } catch (error) {
         console.error("Error al enviar el producto:", error)
         alert("Se produjo un error al enviar el producto. Intente nuevamente.")

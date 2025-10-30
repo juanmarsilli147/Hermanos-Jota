@@ -11,8 +11,8 @@ import AdminPanel from './pages/AdminPanel';
 
 
 function App() {
-  const [route, setRoute] = useState('index');
   const [carrito, setCarrito] = useState([]);
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
   const anadirAlCarrito = (producto) => {
     setCarrito([...carrito, producto])
@@ -24,10 +24,10 @@ function App() {
       
       <Routes>
           <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
-          <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito}/>}/>
+          <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito} productoSeleccionado={productoSeleccionado} setProductoSeleccionado={setProductoSeleccionado}/>}/>
           <Route path='/contacto' element={<Contacto/>}/>
           <Route path='/admin' element={<AdminPanel />}/>
-          <Route path='/admin/crear-producto' element={<CrearProducto />} />
+          <Route path='/admin/crear-producto' element={<CrearProducto setProductoSeleccionado={setProductoSeleccionado}/>} />
       </Routes>
 
       <Footer/>

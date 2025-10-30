@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
+import {useNavigate} from 'react-router-dom'
 import {validacionCampos, alertas, enviarFormulario} from "./funcionesProductoNuevo"
 import { OverlayFormProducto } from "./OverlayFormProducto"
 
-function CrearProductoFormulario() {
+function CrearProductoFormulario({setProductoSeleccionado}) {
+
+    const navigate = useNavigate()
 
     // --ESTADOS -- //
     //Estado de los datos del form
@@ -103,7 +106,7 @@ function CrearProductoFormulario() {
 
     // -- DEVOLUCIÓN DE FORMULARIO -- //
     return (
-        <form id="productoNuevo-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso})} noValidate>
+        <form id="productoNuevo-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso, setProductoSeleccionado, navigate})} noValidate>
             <div>
                 <label htmlFor="nombre" className="productoNuevo-label">Nombre</label><br></br>
                 <input 

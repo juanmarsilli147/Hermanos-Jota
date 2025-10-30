@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+import {Link} from 'react-router-dom';
 import FeaturedProduct from "./FeaturedProduct";
 import '../css/App.css';
 
@@ -31,7 +32,7 @@ function Destacados({setRoute, anadirFuncion, onVerDetalle}) {
                         <p className="sub">Novedades y favoritos de la casa</p>
                     </div>
                     <div className="ver-coleccion">
-                        <button className="btn-ver-coleccion" onClick={() => setRoute('productos')}>Ver Colección</button>
+                        <Link to="productos"><button className="btn-ver-coleccion">Ver Colección</button></Link>
                     </div>
                 </section>
                 <section className="destacados-productos">

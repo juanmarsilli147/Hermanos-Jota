@@ -4,11 +4,10 @@ import ProductDetail from "../components/ProductDetail";
 import SearchBar from "../components/SearchBar";
 import "../css/App.css";
 
-export default function Catalogo({ setRoute, anadirFuncion }) {
+export default function Catalogo({ setRoute, anadirFuncion, productoSeleccionado, setProductoSeleccionado }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
   const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
