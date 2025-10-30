@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Navbar contador={carrito.length}/>
+      <Navbar contador={carrito.length} setProductoSeleccionado={setProductoSeleccionado}/>
       
       <Routes>
           <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
@@ -30,7 +30,7 @@ function App() {
           <Route path='/admin/crear-producto' element={<CrearProducto setProductoSeleccionado={setProductoSeleccionado}/>} />
       </Routes>
 
-      <Footer/>
+      <Footer setProductoSeleccionado={setProductoSeleccionado}/>
     </>
   );
 }

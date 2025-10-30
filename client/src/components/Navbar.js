@@ -5,7 +5,7 @@ import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-function Navbar({contador}){
+function Navbar({contador, setProductoSeleccionado}){
     // Menú hamburguesa visibilidad
     const [menuVisible, setVisibilidad] = useState(false);
 
@@ -15,7 +15,7 @@ function Navbar({contador}){
     return (
         <header>
             {/* Logo */}
-            <Link to="/" className='logo' onClick={() => setVisibilidad(false)}>
+            <Link to="/" className='logo' onClick={() => {setVisibilidad(false); setProductoSeleccionado(null)}}>
                 <img src='http://localhost:4000/img/logoinvertido.svg' alt="Logo"/>
                 <p className='nombre-marca'>Hermanos JOTA</p>
             </Link>
@@ -27,20 +27,20 @@ function Navbar({contador}){
             <nav className={menuVisible ? 'nav visible' : 'nav'}>
                 <ul className='links-nav'>
                     {/* Ir al index */}              
-                    <NavLink to="/" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                    <NavLink to="/" className={getNavLinkClass} onClick={() => {setVisibilidad(false); setProductoSeleccionado(null)}}>
                         Inicio
                     </NavLink>
                     
 
                     {/* Ir a productos */}
-                    <NavLink to="/productos" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                    <NavLink to="/productos" className={getNavLinkClass} onClick={() => {setVisibilidad(false); setProductoSeleccionado(null)}}>
                         Productos
                     </NavLink>
                     
 
                     {/* Ir a contacto */}
                     
-                    <NavLink to="/contacto" className={getNavLinkClass} onClick={() => setVisibilidad(false)}>
+                    <NavLink to="/contacto" className={getNavLinkClass} onClick={() => {setVisibilidad(false); setProductoSeleccionado(null)}}>
                         Contacto
                     </NavLink>
                     

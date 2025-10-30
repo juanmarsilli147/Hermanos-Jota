@@ -17,7 +17,7 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion, onVer
   return (
     <>
       <section className="producto">
-        <button className="btn-regresar-movil"><FontAwesomeIcon icon={faArrowLeft}/> Regresar</button>
+        <button onClick={onVolver} className="btn-regresar-movil"><FontAwesomeIcon icon={faArrowLeft}/> Regresar</button>
         <img src={producto.imagen} alt={producto.nombre} className="producto-img"/>
         <div className="producto-info">
           <button onClick={onVolver} className="btn-regresar"><FontAwesomeIcon icon={faArrowLeft}/> Regresar</button>

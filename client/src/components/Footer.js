@@ -3,13 +3,13 @@ import '../css/App.css';
 import {Link} from 'react-router-dom';
 import MediosContacto from './MediosContacto';
 
-function Footer(){
+function Footer({setProductoSeleccionado}){
     return(
         <footer>
             {/* Logo footer */}
             <section className='footer-marca'>
                 <Link to="/">
-                    <div className='footer-logo'>
+                    <div onClick={() => setProductoSeleccionado(null)} className='footer-logo'>
                         <div>
                             <img src='http://localhost:4000/img/logoinvertido.svg' alt='Logo Hermanos Jota'/>
                         </div>
@@ -24,9 +24,9 @@ function Footer(){
                 <section className='footer-navegacion'>
                     <h4>Navega</h4>
                     <ul>
-                        <Link to="/"><li className='footer-link'>Inicio</li></Link>
-                        <Link to="productos"><li className='footer-link'>Productos</li></Link>
-                        <Link to="contacto"><li className='footer-link'>Contacto</li></Link>
+                        <Link to="/"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Inicio</li></Link>
+                        <Link to="productos"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Productos</li></Link>
+                        <Link to="contacto"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Contacto</li></Link>
                     </ul>
                 </section>
 
