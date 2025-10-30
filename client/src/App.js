@@ -23,7 +23,7 @@ function App() {
       <Navbar contador={carrito.length} setProductoSeleccionado={setProductoSeleccionado}/>
       
       <Routes>
-          <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito}/>}/>
+          <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito} productoSeleccionado={productoSeleccionado} setProductoSeleccionado={setProductoSeleccionado}/>}/>
           <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito} productoSeleccionado={productoSeleccionado} setProductoSeleccionado={setProductoSeleccionado}/>}/>
           <Route path='/contacto' element={<Contacto/>}/>
           <Route path='/admin' element={<AdminPanel />}/>
