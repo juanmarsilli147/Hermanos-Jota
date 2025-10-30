@@ -4,7 +4,7 @@ import ProductDetail from "../components/ProductDetail";
 import SearchBar from "../components/SearchBar";
 import "../css/App.css";
 
-export default function Catalogo({ setRoute, anadirFuncion, productoSeleccionado, setProductoSeleccionado }) {
+export default function Catalogo({ anadirFuncion, productoSeleccionado, setProductoSeleccionado }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -60,7 +60,6 @@ export default function Catalogo({ setRoute, anadirFuncion, productoSeleccionado
             onVolver={() => setProductoSeleccionado(null)}
             anadirFuncion={anadirFuncion}
             onVerDetalle={setProductoSeleccionado}
-            setRoute={setRoute}
           />
         )}
       </section>

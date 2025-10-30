@@ -12,7 +12,7 @@ const productosDestacados = (url) => {
     })
 }
 
-function Destacados({setRoute, anadirFuncion, onVerDetalle}) {
+function Destacados({anadirFuncion, onVerDetalle}) {
 
     const {
         data: featuredProducts,

@@ -4,7 +4,7 @@ import Destacados from '../components/Destacados';
 import React, {useEffect, useState} from 'react';
 import ProductDetail from '../components/ProductDetail';
 
-function PaginaInicio({setRoute, anadirFuncion}){
+function PaginaInicio({anadirFuncion}){
     const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
     useEffect(() => {

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import ProductosRelacionados from "./ProductosRelacionados"; 
 
-export default function ProductDetail({ producto, onVolver, anadirFuncion, onVerDetalle, setRoute }) {
+export default function ProductDetail({ producto, onVolver, anadirFuncion, onVerDetalle }) {
 
   useEffect(() => {
     window.scrollTo({top: 0, behavior: 'smooth'})
@@ -65,7 +65,6 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion, onVer
         productoId={producto.id}
         onVerDetalle={onVerDetalle}
         anadirFuncion={anadirFuncion}
-        setRoute={setRoute}
       />
     </>
   );  
