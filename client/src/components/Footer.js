@@ -1,18 +1,21 @@
 import React from 'react';
 import '../css/App.css';
+import {Link} from 'react-router-dom';
 import MediosContacto from './MediosContacto';
 
-function Footer({setRoute}){
+function Footer({setProductoSeleccionado}){
     return(
         <footer>
             {/* Logo footer */}
             <section className='footer-marca'>
-                <div className='footer-logo' onClick={() => setRoute('index')}>
-                    <div>
-                        <img src='http://localhost:4000/img/logoinvertido.svg' alt='Logo Hermanos Jota'/>
+                <Link to="/">
+                    <div onClick={() => setProductoSeleccionado(null)} className='footer-logo'>
+                        <div>
+                            <img src='http://localhost:4000/img/logoinvertido.svg' alt='Logo Hermanos Jota'/>
+                        </div>
+                        <p className='footer-nombre-marca'>Hermanos JOTA</p>
                     </div>
-                    <p className='footer-nombre-marca'>Hermanos JOTA</p>
-                </div>
+                </Link>
                 <p>Cada pieza cuenta la historia de manos expertas y materiales nobles</p>
             </section>
 
@@ -21,9 +24,9 @@ function Footer({setRoute}){
                 <section className='footer-navegacion'>
                     <h4>Navega</h4>
                     <ul>
-                        <li className='footer-link' onClick={() => setRoute('index')}>Inicio</li>
-                        <li className='footer-link' onClick={() => setRoute('productos')}>Productos</li>
-                        <li className='footer-link' onClick={() => setRoute('contacto')}>Contacto</li>
+                        <Link to="/"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Inicio</li></Link>
+                        <Link to="productos"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Productos</li></Link>
+                        <Link to="contacto"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Contacto</li></Link>
                     </ul>
                 </section>
 

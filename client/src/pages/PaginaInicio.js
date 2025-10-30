@@ -1,11 +1,10 @@
 import Hero from '../components/Hero';
 import SeparacionSecciones from '../components/SeparacionSecciones';
 import Destacados from '../components/Destacados';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import ProductDetail from '../components/ProductDetail';
 
-function PaginaInicio({setRoute, anadirFuncion}){
-    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+function PaginaInicio({anadirFuncion, productoSeleccionado, setProductoSeleccionado}){
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
@@ -15,11 +14,11 @@ function PaginaInicio({setRoute, anadirFuncion}){
         <main>
             {!productoSeleccionado ? (
                 <>
-                    <Hero setRoute={setRoute}/>
+                    <Hero/>
             
                     <SeparacionSecciones/>
                     
-                    <Destacados setRoute={setRoute} anadirFuncion={anadirFuncion} onVerDetalle={(producto) => setProductoSeleccionado(producto)}/>
+                    <Destacados anadirFuncion={anadirFuncion} onVerDetalle={(producto) => setProductoSeleccionado(producto)}/>
                 </>
             ) : (
                 <section className='catalogo'>
