@@ -1474,9 +1474,14 @@ footer h4{
 
     .destacados-producto h4{
         font-size: 28px;
+        height: 68px;
+        place-content: center;
     }
     .destacados-description p{
         font-size: 20px;
+        height: 48px;
+        place-content: center;
+        text-align: center;
     }
 
     .relacionados-flex{
