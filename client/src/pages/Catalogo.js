@@ -9,9 +9,12 @@ export default function Catalogo({ anadirFuncion, productoSeleccionado, setProdu
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [busqueda, setBusqueda] = useState("");
+  const [refreshToggle, setRefreshToggle] = useState(false); // forzar actualizacion desp de eliminar
 
   useEffect(() => {
     const fetchProductos = async () => {
+      setLoading(true);
+      setError(null);
       try {
         const response = await fetch("http://localhost:4000/api/productos");
         if (!response.ok) throw new Error("Error al cargar productos");
@@ -24,7 +27,7 @@ export default function Catalogo({ anadirFuncion, productoSeleccionado, setProdu
       }
     };
     fetchProductos();
-  }, []);
+  }, [setProductos, refreshToggle]);
 
 
   const productosFiltrados = productos.filter((p) =>
@@ -34,6 +37,15 @@ export default function Catalogo({ anadirFuncion, productoSeleccionado, setProdu
   useEffect(() => {
     window.scrollTo({top: 0, behavior: 'smooth'})
   }, [])
+
+  // onVolver ahora acepta un parámetro para refrescar la lista
+  const onVolver = (shouldRefresh = false) => {
+    setProductoSeleccionado(null);
+    // Si se recibe una señal de refresco (tras una eliminación exitosa), alterna el estado para re-ejecutar fetchProductos
+    if (shouldRefresh) {
+        setRefreshToggle(prev => !prev);
+    }
+  };
 
   return (
     <main className="main-productos">
@@ -57,7 +69,7 @@ export default function Catalogo({ anadirFuncion, productoSeleccionado, setProdu
             key={productoSeleccionado.id}
             producto={productoSeleccionado}
             productos={productos}
-            onVolver={() => setProductoSeleccionado(null)}
+            onVolver={onVolver} 
             anadirFuncion={anadirFuncion}
             onVerDetalle={setProductoSeleccionado}
           />

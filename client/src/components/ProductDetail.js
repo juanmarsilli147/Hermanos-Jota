@@ -13,6 +13,36 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion, onVer
   if (!producto) {
     return <div className="error">Error: No se encontró el producto.</div>;
   }
+
+  const handleDelete = async () => {
+    // 2. Confirmation dialog (window.confirm())
+    if (window.confirm(`¿Estás seguro de que deseas eliminar el producto: ${producto.nombre}?`)) {
+      try {
+        // 3. Send DELETE request to /api/productos/:id
+        const response = await fetch(`http://localhost:4000/api/productos/${producto.id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({ message: 'Error desconocido' }));
+          throw new Error(`Error al eliminar el producto: ${response.status} - ${errorData.message || 'Error del servidor'}`);
+        }
+
+        // 4. Redirect user back to the catalog (or unselect product in parent view)
+        alert(`Producto ${producto.nombre} eliminado exitosamente.`);
+        
+        // Use onVolver(true) to signal the parent component to refresh the product list
+        onVolver(true); 
+        
+      } catch (error) {
+        console.error('Error al intentar eliminar el producto:', error);
+        alert(`Fallo al eliminar el producto: ${error.message}`);
+      }
+    }
+  };
   
   return (
     <>
@@ -25,6 +55,13 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion, onVer
           <p className="detalleProducto-body">{producto.descripcion}</p>
           <p className="precio-prod">${producto.precio}</p>
           <button className="btn-carrito-detalle" onClick={() => anadirFuncion(producto)}>Agregar al carrito</button>
+          {/* Botón de eliminar */}
+          <button 
+            className="btn-eliminar"
+            onClick={handleDelete}
+          >
+            Eliminar
+          </button>
         </div>
           {/* Mostrar sostenibilidad si existe (soporta 'sostentabilidad' o 'sostenibilidad') */}
 
