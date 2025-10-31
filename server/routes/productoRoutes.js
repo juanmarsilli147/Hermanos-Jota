@@ -49,8 +49,7 @@ routes.get('/', async (req, res) => {
 routes.get("/:id", async (req, res, next) => {
     try{
         const { id } = req.params
-        const parsedId = parseInt(id)
-        const producto = await Producto.findOne({id: parsedId})
+        const producto = await Producto.findOne({_id: id})
 
         if (!producto) {
             return res.status(404).json({ 

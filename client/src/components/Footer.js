@@ -24,9 +24,9 @@ function Footer({setProductoSeleccionado}){
                 <section className='footer-navegacion'>
                     <h4>Navega</h4>
                     <ul>
-                        <Link to="/"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Inicio</li></Link>
-                        <Link to="productos"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Productos</li></Link>
-                        <Link to="contacto"><li onClick={() => setProductoSeleccionado(null)} className='footer-link'>Contacto</li></Link>
+                        <Link to="/"><li className='footer-link'>Inicio</li></Link>
+                        <Link to="productos"><li className='footer-link'>Productos</li></Link>
+                        <Link to="contacto"><li className='footer-link'>Contacto</li></Link>
                     </ul>
                 </section>
 

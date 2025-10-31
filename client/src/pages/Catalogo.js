@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
-import ProductDetail from "../components/ProductDetail";
 import SearchBar from "../components/SearchBar";
 import "../css/App.css";
 
-export default function Catalogo({ anadirFuncion, productoSeleccionado, setProductoSeleccionado }) {
+export default function Catalogo({ anadirFuncion }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -45,23 +44,12 @@ export default function Catalogo({ anadirFuncion, productoSeleccionado, setProdu
         {loading && <p>Cargando...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
       
-
-        {!productoSeleccionado ? (
+    
           <ProductList
             productos={productosFiltrados}
-            onVerDetalle={setProductoSeleccionado}
             anadirFuncion={anadirFuncion}
           />
-        ) : (
-          <ProductDetail
-            key={productoSeleccionado.id}
-            producto={productoSeleccionado}
-            productos={productos}
-            onVolver={() => setProductoSeleccionado(null)}
-            anadirFuncion={anadirFuncion}
-            onVerDetalle={setProductoSeleccionado}
-          />
-        )}
+        
       </section>
     </main>
   );

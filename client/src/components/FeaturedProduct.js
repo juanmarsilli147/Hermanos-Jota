@@ -1,19 +1,22 @@
 import '../css/App.css';
 import ButtonAgregarCarrito from "./ButtonAgregarCarrito";
+import {Link} from 'react-router-dom'
 
-function FeaturedProduct({imagen, alt, nombre, descripcion, anadirFuncion, onVerDetalle}){
+function FeaturedProduct({producto, anadirFuncion}){
     return (
         <>
             <div className="destacados-img">
-                <img src={imagen} alt={alt}/>
+                <img src={producto.imagen} alt={producto.alt}/>
             </div>
             <section className="destacados-description">
-                <h4>{nombre}</h4>
+                <h4>{producto.nombre}</h4>
                 <div className="destacados-separacion"></div>
-                <p>{descripcion}</p>
+                <p>{producto.descripcionDestacado}</p>
                 <div className="destacados-botones-card">
-                    <button className="ver-detalle-indexCards" onClick={() => onVerDetalle()}>Ver detalle</button>
-                    <ButtonAgregarCarrito producto={{imagen, alt, nombre, descripcion}} anadirFuncion={anadirFuncion} onVerDetalle={onVerDetalle}/>
+                    <Link to={`/productos/${producto._id}`} className="ver-detalle-indexCards">
+                        Ver detalle
+                    </Link>
+                    <ButtonAgregarCarrito producto={producto} anadirFuncion={anadirFuncion}/>
                 </div>
             </section>
         </>
