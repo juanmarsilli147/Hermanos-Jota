@@ -18,7 +18,11 @@ El sistema permite visualizar productos, ver sus detalles, simular un carrito de
 
 ---
 
-## Instalación y Ejecución
+## Producción
+- **Frontend:** https://hermanos-jota-theta.vercel.app/
+- **Backend:** https://hermanos-jota-69u8.onrender.com/
+
+## Desarrollo (instalación y ejecución local)
 
 ### Clonar el repositorio
 - git clone https://github.com/juanmarsilli147/Hermanos-Jota.git
