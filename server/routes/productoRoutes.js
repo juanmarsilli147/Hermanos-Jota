@@ -49,8 +49,7 @@ routes.get('/', async (req, res) => {
 routes.get("/:id", async (req, res, next) => {
     try{
         const { id } = req.params
-        const parsedId = parseInt(id)
-        const producto = await Producto.findOne({id: parsedId})
+        const producto = await Producto.findOne({_id: id})
 
         if (!producto) {
             return res.status(404).json({ 
@@ -102,8 +101,7 @@ routes.post("/", upload.single('imagen'), async (req, res, next) => {
 routes.put("/:id", async (req, res, next) => {
     try{
         const { id } = req.params
-        const parsedId = parseInt(id)
-        const producto = await Producto.findOneAndUpdate({id: parsedId}, req.body, {new: true})
+        const producto = await Producto.findOneAndUpdate({_id: id}, req.body, {new: true})
 
         if (!producto) {
             return res.status(404).json({ 
@@ -120,8 +118,8 @@ routes.put("/:id", async (req, res, next) => {
 routes.delete("/:id", async (req, res, next) => {
     try{
         const { id } = req.params
-        const parsedId = parseInt(id)
-        const productoEliminado = await Producto.findOneAndDelete({id: parsedId})
+        
+        const productoEliminado = await Producto.findOneAndDelete({_id: id})
 
         if (!productoEliminado) {
             return res.status(404).json({ 

@@ -12,7 +12,7 @@ const ProdRelacionados = async (url) => {
 }
 
 // Muestra hasta 3 productos distintos al producto actual en una grilla
-export default function ProductosRelacionados({ producto, anadirFuncion, onVerDetalle = () => {}}) {
+export default function ProductosRelacionados({ producto, anadirFuncion}) {
   const {
     data: productos,
     error,
@@ -28,7 +28,7 @@ export default function ProductosRelacionados({ producto, anadirFuncion, onVerDe
     if (isLoading || error || !Array.isArray(productos)) return;
     if (!producto) return;
 
-    const relacionados = productos.filter(p => p && p.id !== producto.id);
+    const relacionados = productos.filter(p => p && p._id !== producto._id);
     const shuffled = relacionados.sort(() => Math.random() - 0.5).slice(0, 3);
     setSeleccionados(shuffled);
     initializedRef.current = true;
@@ -47,7 +47,7 @@ export default function ProductosRelacionados({ producto, anadirFuncion, onVerDe
       <div className="relacionados-flex">
         {seleccionados.map(p => (
           <div key={p.id}>
-            <ProductCard producto={p} onVerDetalle={() => { onVerDetalle(p) }} anadirFuncion={anadirFuncion} />
+            <ProductCard producto={p} anadirFuncion={anadirFuncion} />
           </div>
         ))}
       </div>

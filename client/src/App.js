@@ -8,11 +8,12 @@ import Catalogo from './pages/Catalogo';
 import {Routes, Route} from 'react-router-dom'
 import CrearProducto from './pages/CrearProducto';
 import AdminPanel from './pages/AdminPanel';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 
 function App() {
   const [carrito, setCarrito] = useState([]);
-  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  
 
   const anadirAlCarrito = (producto) => {
     setCarrito([...carrito, producto])
@@ -20,17 +21,18 @@ function App() {
 
   return (
     <>
-      <Navbar contador={carrito.length} setProductoSeleccionado={setProductoSeleccionado}/>
+      <Navbar contador={carrito.length} />
       
       <Routes>
-          <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito} productoSeleccionado={productoSeleccionado} setProductoSeleccionado={setProductoSeleccionado}/>}/>
-          <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito} productoSeleccionado={productoSeleccionado} setProductoSeleccionado={setProductoSeleccionado}/>}/>
+          <Route path='/' element={<PaginaInicio anadirFuncion={anadirAlCarrito} />}/>
+          <Route path='/productos' element={<Catalogo anadirFuncion={anadirAlCarrito} />}/>
+          <Route path='/productos/:id' element={<ProductDetailPage anadirFuncion={anadirAlCarrito} />}/>
           <Route path='/contacto' element={<Contacto/>}/>
           <Route path='/admin' element={<AdminPanel />}/>
-          <Route path='/admin/crear-producto' element={<CrearProducto setProductoSeleccionado={setProductoSeleccionado}/>} />
+          <Route path='/admin/crear-producto' element={<CrearProducto />} />
       </Routes>
 
-      <Footer setProductoSeleccionado={setProductoSeleccionado}/>
+      <Footer />
     </>
   );
 }

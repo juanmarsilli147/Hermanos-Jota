@@ -12,7 +12,7 @@ const productosDestacados = (url) => {
     })
 }
 
-function Destacados({anadirFuncion, onVerDetalle}) {
+function Destacados({anadirFuncion}) {
 
     const {
         data: featuredProducts,
@@ -38,8 +38,8 @@ function Destacados({anadirFuncion, onVerDetalle}) {
                 <section className="destacados-productos">
                     {featuredProducts.map(product => (
                         <section key={product.id} className="destacados-producto">
-                            <FeaturedProduct imagen={product.imagen} alt={product.alt} nombre={product.nombre} descripcion={product.descripcionDestacado} anadirFuncion={anadirFuncion} onVerDetalle={() => onVerDetalle(product)}/>
-                            </section>
+                            <FeaturedProduct producto={product} anadirFuncion={anadirFuncion} />
+                        </section>
                     ))}
                 </section>
             </section>
