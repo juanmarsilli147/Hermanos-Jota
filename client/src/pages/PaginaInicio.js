@@ -10,6 +10,14 @@ function PaginaInicio({anadirFuncion, productoSeleccionado, setProductoSeleccion
         window.scrollTo({top: 0, behavior: 'smooth'})
     }, [])
 
+    // onVolver ahora acepta un parámetro para refrescar la lista (manteniendo la compatibilidad)
+    const onVolver = (shouldRefresh = false) => {
+        setProductoSeleccionado(null);
+        // El refresco para Destacados y ProductosRelacionados (que usan SWR)
+        // se debería manejar con la invalidación de la caché de SWR.
+        // Aquí simplemente regresamos a la vista principal.
+    };
+
     return(
         <main>
             {!productoSeleccionado ? (
@@ -22,7 +30,7 @@ function PaginaInicio({anadirFuncion, productoSeleccionado, setProductoSeleccion
                 </>
             ) : (
                 <section className='catalogo'>
-                    <ProductDetail key={productoSeleccionado.id} producto={productoSeleccionado} onVolver={() => setProductoSeleccionado(null)} anadirFuncion={anadirFuncion} onVerDetalle={setProductoSeleccionado}/>
+                    <ProductDetail key={productoSeleccionado.id} producto={productoSeleccionado} onVolver={onVolver} anadirFuncion={anadirFuncion} onVerDetalle={setProductoSeleccionado}/>
                 </section>
             )}
         </main>
