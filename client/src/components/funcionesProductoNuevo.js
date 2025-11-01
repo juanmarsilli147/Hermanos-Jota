@@ -73,7 +73,6 @@ export async function enviarFormulario({
     setErrores,
     setIntento,
     setExitoso,
-    setProductoSeleccionado,
     navigate
 }) {
     // Evita el la recarga automática de la página para evaluar
@@ -156,8 +155,6 @@ export async function enviarFormulario({
             })
 
             setIntento(false)
-
-            setProductoSeleccionado(data)
             navigate('/productos')
 
         }, 3000)

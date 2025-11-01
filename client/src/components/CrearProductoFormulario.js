@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import {validacionCampos, alertas, enviarFormulario} from "./funcionesProductoNuevo"
 import { OverlayFormProducto } from "./OverlayFormProducto"
 
-function CrearProductoFormulario({setProductoSeleccionado}) {
+function CrearProductoFormulario() {
 
     const navigate = useNavigate()
 
@@ -106,7 +106,7 @@ function CrearProductoFormulario({setProductoSeleccionado}) {
 
     // -- DEVOLUCIÓN DE FORMULARIO -- //
     return (
-        <form id="productoNuevo-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso, setProductoSeleccionado, navigate})} noValidate>
+        <form id="productoNuevo-form" onSubmit={(evento) => enviarFormulario({evento, datos, setDatos, setErrores, setIntento, setExitoso, navigate})} noValidate>
             <div>
                 <label htmlFor="nombre" className="productoNuevo-label">Nombre</label><br></br>
                 <input 
