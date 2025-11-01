@@ -46,7 +46,7 @@ export default function ProductosRelacionados({ producto, anadirFuncion}) {
       <h2 className="detalle-h2">Otras personas vieron</h2>
       <div className="relacionados-flex">
         {seleccionados.map(p => (
-          <div key={p.id}>
+          <div key={p._id}>
             <ProductCard producto={p} anadirFuncion={anadirFuncion} />
           </div>
         ))}
