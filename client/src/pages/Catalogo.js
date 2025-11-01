@@ -37,15 +37,6 @@ export default function Catalogo({ anadirFuncion }) {
     window.scrollTo({top: 0, behavior: 'smooth'})
   }, [])
 
-  // onVolver ahora acepta un parámetro para refrescar la lista
-  const onVolver = (shouldRefresh = false) => {
-    setProductoSeleccionado(null);
-    // Si se recibe una señal de refresco (tras una eliminación exitosa), alterna el estado para re-ejecutar fetchProductos
-    if (shouldRefresh) {
-        setRefreshToggle(prev => !prev);
-    }
-  };
-
   return (
     <main className="main-productos">
       <section className="catalogo">
