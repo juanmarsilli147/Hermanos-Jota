@@ -37,7 +37,7 @@ function Destacados({anadirFuncion}) {
                 </section>
                 <section className="destacados-productos">
                     {featuredProducts.map(product => (
-                        <section key={product.id} className="destacados-producto">
+                        <section key={product._id} className="destacados-producto">
                             <FeaturedProduct producto={product} anadirFuncion={anadirFuncion} />
                         </section>
                     ))}
