@@ -29,7 +29,7 @@ El nuevo sistema permite visualizar productos, ver sus detalles, simular un carr
 - cd server 
 - npm install
 - npm run dev
-- Servidor corriendo en el http://localhost:4000
+- Servidor corriendo en el https://hermanos-jota-69u8.onrender.com
 
 ### Incializacion del frontend
 **Ejecutar los siguientes comandos en orden**
