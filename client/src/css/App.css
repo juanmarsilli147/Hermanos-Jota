@@ -1254,6 +1254,10 @@ footer h4{
     outline: 2px solid var(--siena-tostado);
 }
 
+input[type="file"]{
+    padding: 0
+}
+
 .error-validacion {
   font-size: 0.85rem;
   color: red

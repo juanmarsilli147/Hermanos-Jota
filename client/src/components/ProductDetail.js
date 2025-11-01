@@ -2,7 +2,6 @@ import "../css/App.css";
 import React, {useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import ProductosRelacionados from "./ProductosRelacionados"; 
 
 export default function ProductDetail({ producto, onVolver, anadirFuncion }) {
 
@@ -81,7 +80,6 @@ export default function ProductDetail({ producto, onVolver, anadirFuncion }) {
               <li>{producto.tapizado && <><strong>Tapizado:</strong> {producto.tapizado}<br/></>}</li>
               <li>{producto.relleno && <><strong>Relleno:</strong> {producto.relleno}<br/></>}</li>
               <li>{producto.confort && <><strong>Confort:</strong> {producto.confort}<br/></>}</li>
-              <li>{producto.acabado && <><strong>Acabado:</strong> {producto.acabado}<br/></>}</li>
               <li>{producto.sostenibilidad && <><strong>Sostenibilidad:</strong> {producto.sostenibilidad}<br/></>}</li>
               <li>{producto.apilables && <><strong>Apilables:</strong> {producto.apilables}<br/></>}</li>
               <li>{producto.cables && <><strong>Cables:</strong> {producto.cables}<br/></>}</li>
