@@ -6,7 +6,7 @@ export default function ProductList({ productos, onVerDetalle, anadirFuncion }) 
     <div className="grid">
       {productos.map((prod) => (
         <ProductCard
-          key={prod.id}
+          key={prod._id}
           producto={prod}
           onVerDetalle={onVerDetalle}
           anadirFuncion={anadirFuncion}

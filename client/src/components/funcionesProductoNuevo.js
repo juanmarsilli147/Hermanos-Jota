@@ -2,7 +2,6 @@
 
 // -- FUNCIÓN VALIDADORA DE CAMPOS -- //
 export function validacionCampos({
-    id,
     nombre, 
     descripcion, 
     descripcionDestacado, 
@@ -92,7 +91,6 @@ export async function enviarFormulario({
 
     const formData = new FormData()
 
-    formData.append('id', datos.id);
     formData.append('nombre', datos.nombre);
     formData.append('descripcion', datos.descripcion);
     formData.append('descripcionDestacado', datos.descripcionDestacado);
@@ -128,7 +126,6 @@ export async function enviarFormulario({
             setExitoso(false)
 
             setDatos({
-                id: "",
                 nombre: "",
                 descripcion: "",
                 descripcionDestacado: "",
