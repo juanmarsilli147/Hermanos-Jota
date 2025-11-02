@@ -24,18 +24,25 @@ El sistema permite visualizar productos, ver sus detalles, simular un carrito de
 
 ## Desarrollo (instalación y ejecución local)
 
-### Clonar el repositorio
+### Clonado del repositorio
 - git clone https://github.com/juanmarsilli147/Hermanos-Jota.git
 - cd Hermanos-Jota
 
-### Incializacion del backend
+### Declaración de variables de entorno
+Agregar en la carpeta server (backend) un archivo .env con las siguientes líneas, reemplazando con los datos adecuados en cada caso:
+- MONGODB_URI="mongodb+srv://<usuario>:<contraseña>@hermanos-jota.gvgweov.mongodb.net/hermanos-jota?retryWrites=true&w=majority&appName=Hermanos-Jota"
+- CLOUDINARY_CLOUD_NAME=<CLOUDINARY_CLOUD_NAME>
+- CLOUDINARY_API_KEY=<CLOUDINARY_API_KEY>
+- CLOUDINARY_API_SECRET=<CLOUDINARY_API_SECRET>
+
+### Incialización del backend
 **Ejecutar los siguientes comandos en orden**
 - cd server 
 - npm install
 - npm run dev
 - Servidor corriendo en el http://localhost:4000
 
-### Incializacion del frontend
+### Incialización del frontend
 **Ejecutar los siguientes comandos en orden**
 - cd client 
 - npm install
@@ -63,6 +70,7 @@ El sistema permite visualizar productos, ver sus detalles, simular un carrito de
 ### Backend (Node.js + Express + MongoDB)
 - Implementa un **servidor web** con Express.  
 - Fuente de datos externa: base de datos alojada en MongoDB Atlas.
+- Recepción de imágenes del producto nuevo mediante Cloudinary, Multer y Streamifier.
 - Endpoints definidos:
   - `GET /api/productos` : Devuelve todos los productos.
   - `POST /api/productos` : Crea un producto nuevo.
